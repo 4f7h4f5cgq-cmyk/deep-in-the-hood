@@ -133,6 +133,30 @@ details ul{margin:10px auto 2px;padding:0 0 0 18px;max-width:420px;display:grid;
 .flash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 30% 72%,rgba(255,201,74,.55),rgba(255,201,74,0) 62%);animation:flash 1.1s ease-out forwards}
 @keyframes flash{from{opacity:1}to{opacity:0}}
 
+/* Daily scoreboard (optional) */
+.board{display:grid;gap:10px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03)}
+.board-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.board-count{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.board-form{display:grid;gap:6px}
+.board-form label{font-size:13px;color:var(--cream)}
+.board-form .row{flex-wrap:nowrap}
+.board-name{flex:1 1 auto;min-width:0;max-width:210px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-family:var(--display);font-size:20px;letter-spacing:.2em;text-transform:uppercase;color:var(--amber)}
+.board-name::placeholder{color:var(--muted);opacity:.6}
+.board-name:focus{border-color:var(--amber);outline:none}
+.board-name:focus-visible{outline:3px solid var(--cream);outline-offset:2px}
+.board-msg{margin:0;font-size:12px;color:var(--muted)}
+.board-msg.bad{color:var(--t-r);font-weight:700}
+.board-status{margin:0;font-size:13px;color:var(--t-l);font-weight:700}
+.board-list{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.board-list li{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,.03);font-variant-numeric:tabular-nums}
+.board-list li.me{background:rgba(255,179,71,.14);box-shadow:inset 0 0 0 1px rgba(255,179,71,.5)}
+.board-list li.gap{display:block;background:none;padding:0;text-align:center;color:var(--muted)}
+.board-list .rk{font-family:var(--display);font-size:13px;color:var(--muted)}
+.board-list .nm{font-family:var(--display);font-size:16px;letter-spacing:.16em}
+.board-list .sc{font-family:var(--display);font-size:15px;color:var(--amber)}
+.board-note{margin:0;font-size:13px;color:var(--muted)}
+.board-note a{color:var(--amber)}
+
 @media (max-width:560px){
   .pod{min-width:78px;padding:4px 9px 5px}
   .num{font-size:16px}
@@ -200,6 +224,19 @@ details ul{margin:10px auto 2px;padding:0 0 0 18px;max-width:420px;display:grid;
           <button class="btn ghost" id="practiceBtn2" type="button">Practice ∞</button>
         </div>
         <textarea class="sharebox" id="shareBox" readonly hidden aria-label="Result to copy"></textarea>
+        <section class="board" id="board" hidden aria-labelledby="bTitle">
+          <div class="board-head"><span class="lbl" id="bTitle">Today's scoreboard</span><span class="board-count" id="bCount"></span></div>
+          <form class="board-form" id="bForm" novalidate>
+            <label for="bName">Put your name on today's board (optional)</label>
+            <div class="row">
+              <input class="board-name" id="bName" type="text" maxlength="5" placeholder="NAME" autocomplete="off" autocapitalize="characters" autocorrect="off" spellcheck="false" enterkeyhint="send" aria-describedby="bMsg">
+              <button class="btn" id="bPost" type="submit">Post score</button>
+            </div>
+            <p class="board-msg" id="bMsg" aria-live="polite">Up to 5 letters. No numbers, symbols or spaces.</p>
+          </form>
+          <p class="board-status" id="bStatus" hidden aria-live="polite"></p>
+          <ol class="board-list" id="bList"></ol>
+        </section>
         <div class="countdown" id="eCountdown"></div>
         <ol class="runlist" id="eList"></ol>
       </div>
@@ -18358,7 +18395,139 @@ function showEnd() {
   clearInterval(countdownTimer);
   const tick = () => { const s = secondsToReset(), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60), sec = s % 60; $('#eCountdown').innerHTML = `Next 7 drop in <b>${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}</b>`; if (s <= 1) { clearInterval(countdownTimer); S.day = dayNumber(); } };
   tick(); countdownTimer = setInterval(tick, 1000);
+  showBoard();
 }
+
+// ---------- daily scoreboard (optional) ----------
+// Scores live in a Supabase table set up by tools/scoreboard.sql (see tools/SCOREBOARD.md).
+// The URL and publishable/anon key are public by design; the database enforces the same rules.
+// Empty values hide the scoreboard. Inside the claude.ai artifact the browser blocks the request,
+// so the board there points players to dith.app.
+const BOARD = {url: 'https://cfhkcxizxfpnoczgmrrw.supabase.co', key: 'sb_publishable_zSK0y0nSzAN4mUSZzgaWeA_7IX4ZAMY'};
+// Keep these two lists in sync with tools/scoreboard.sql.
+const BAD_SUB = ['FUCK', 'FUK', 'FUC', 'FCK', 'FUQ', 'PHUK', 'PHUQ', 'SHIT', 'SHYT', 'CUNT', 'KUNT', 'COCK', 'DICK',
+  'PUSS', 'PUSY', 'PUSI', 'BITCH', 'BICH', 'BTCH', 'BYTCH', 'WHOR', 'SLUT', 'SKANK', 'TWAT', 'WANK', 'PISS',
+  'PRICK', 'CLIT', 'PENIS', 'VAGIN', 'DILDO', 'PORN', 'JIZ', 'CUM', 'BOOB', 'ASSH', 'NIGG', 'NIGA', 'NIGR',
+  'NIQQ', 'NEGR', 'COON', 'KIKE', 'CHINK', 'GOOK', 'FAG', 'DYKE', 'TRANY', 'RETAR', 'KKK', 'NAZI', 'HITLE',
+  'MOFO', 'MILF', 'STFU', 'GTFO', 'THOT'];
+const BAD_EXACT = ['ASS', 'ASSES', 'AZZ', 'ARSE', 'HOE', 'HOES', 'TIT', 'TITS', 'TITTY', 'TITIE', 'SEX', 'SEXY', 'RAPE', 'RAPED',
+  'RAPES', 'RAPER', 'RAPIS', 'ANAL', 'ANUS', 'SPIC', 'SPICS', 'SPIK', 'SPIKS', 'WOP', 'WOPS', 'DAGO', 'JAP',
+  'HOMO', 'HOMOS', 'NIGER', 'TARD', 'WTF', 'FU', 'FFS', 'BJ', 'KYS', 'DAMN', 'CRAP', 'SEMEN', 'PUBE', 'PUBES'];
+const BOARD_TOP = 10;
+const boardKey = (d) => `dith:v1:board:${d}`;
+let boardTimer = 0;
+function nameProblem(raw) {
+  const n = String(raw || '').toUpperCase();
+  if (!/^[A-Z]{1,5}$/.test(n)) return 'Use 1 to 5 letters. No numbers, symbols or spaces.';
+  const sq = n.replace(/(.)\1+/g, '$1');
+  if (BAD_EXACT.includes(n) || BAD_EXACT.includes(sq) || BAD_SUB.some((w) => n.includes(w) || sq.includes(w))) return "That name isn't allowed. Pick another one.";
+  return '';
+}
+function playerId() {
+  let id = store.get('dith:v1:player');
+  if (typeof id !== 'string' || !/^[0-9a-f-]{36}$/.test(id)) {
+    const b = crypto.getRandomValues(new Uint8Array(16)); b[6] = (b[6] & 15) | 64; b[8] = (b[8] & 63) | 128;
+    const h = [...b].map((x) => x.toString(16).padStart(2, '0')).join('');
+    id = `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
+    store.set('dith:v1:player', id);
+  }
+  return id;
+}
+function boardHeaders(extra) {
+  const h = {apikey: BOARD.key, ...extra};
+  if (!BOARD.key.startsWith('sb_')) h.Authorization = `Bearer ${BOARD.key}`; // legacy anon JWT keys also need this
+  return h;
+}
+async function boardLoad(day) {
+  const r = await fetch(`${BOARD.url}/rest/v1/scores?select=id,name,score,created_at&day=eq.${day}&order=score.desc,created_at.asc,id.asc&limit=500`, {headers: boardHeaders({Prefer: 'count=exact'})});
+  if (!r.ok) throw Object.assign(new Error('load'), {code: 'error'});
+  const rows = await r.json();
+  const total = +((r.headers.get('content-range') || '').split('/')[1]) || rows.length;
+  return {rows, total};
+}
+async function boardPost(day, name, score) {
+  const r = await fetch(`${BOARD.url}/rest/v1/scores?select=id,name,score,created_at`, {
+    method: 'POST',
+    headers: boardHeaders({'Content-Type': 'application/json', Prefer: 'return=representation'}),
+    body: JSON.stringify({day, name, score, player: playerId()}),
+  });
+  if (r.ok) return (await r.json())[0];
+  let body = {}; try { body = await r.json(); } catch (e) {}
+  const msg = String(body.message || '');
+  const code = r.status === 409 || body.code === '23505' ? 'dupe' : /name_/.test(msg) ? 'name' : /day_closed/.test(msg) ? 'closed' : /board_full/.test(msg) ? 'full' : 'error';
+  throw Object.assign(new Error(code), {code});
+}
+function boardNote(text, withLink) {
+  const list = $('#bList'); list.innerHTML = '';
+  const p = document.createElement('p'); p.className = 'board-note'; p.textContent = text;
+  if (withLink) { const a = document.createElement('a'); a.href = 'https://dith.app'; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'dith.app'; p.append(' ', a, '.'); }
+  list.append(p);
+}
+const onDith = () => /(^|\.)dith\.app$/.test(location.hostname) || /^(localhost|127\.0\.0\.1)$/.test(location.hostname);
+function renderBoard({rows, total}) {
+  const mine = store.get(boardKey(S.day));
+  $('#bCount').textContent = total ? `${total} ${total === 1 ? 'name' : 'names'} today` : '';
+  const list = $('#bList'); list.innerHTML = '';
+  if (!rows.length) { boardNote('No names yet. Be the first on the block.'); return; }
+  const row = (r, i) => {
+    const li = document.createElement('li'); if (mine && mine.id === r.id) li.className = 'me';
+    const rk = document.createElement('span'); rk.className = 'rk'; rk.textContent = `#${i + 1}`;
+    const nm = document.createElement('span'); nm.className = 'nm'; nm.textContent = r.name;
+    const sc = document.createElement('span'); sc.className = 'sc'; sc.textContent = r.score;
+    li.append(rk, nm, sc); return li;
+  };
+  rows.slice(0, BOARD_TOP).forEach((r, i) => list.append(row(r, i)));
+  const at = mine ? rows.findIndex((r) => r.id === mine.id) : -1;
+  if (at >= BOARD_TOP) { const gap = document.createElement('li'); gap.className = 'gap'; gap.textContent = '⋯'; list.append(gap, row(rows[at], at)); }
+}
+async function refreshBoard() {
+  if (S.phase !== 'end' || $('#board').hidden) { clearInterval(boardTimer); return; }
+  try { renderBoard(await boardLoad(S.day)); }
+  catch (e) { onDith() ? boardNote("Couldn't reach the scoreboard. It'll try again in a minute.") : boardNote('The scoreboard lives at', true); }
+}
+function showBoard() {
+  clearInterval(boardTimer);
+  const on = S.mode === 'daily' && !!BOARD.url && !!BOARD.key;
+  $('#board').hidden = !on;
+  if (!on) return;
+  const mine = store.get(boardKey(S.day));
+  $('#bForm').hidden = !!mine || !onDith();
+  $('#bStatus').hidden = !mine;
+  if (mine) $('#bStatus').textContent = `You're on today's board as ${mine.name}.`;
+  const saved = store.get('dith:v1:boardname');
+  $('#bName').value = typeof saved === 'string' && !nameProblem(saved) ? saved : '';
+  const msg = $('#bMsg'); msg.className = 'board-msg'; msg.textContent = 'Up to 5 letters. No numbers, symbols or spaces.';
+  $('#bCount').textContent = '';
+  boardNote('Loading the board…');
+  refreshBoard(); boardTimer = setInterval(refreshBoard, 60000);
+}
+$('#bName').addEventListener('input', () => {
+  const el = $('#bName'), clean = el.value.toUpperCase().replace(/[^A-Z]/g, '').slice(0, 5);
+  const msg = $('#bMsg');
+  if (clean !== el.value.toUpperCase()) { msg.className = 'board-msg bad'; msg.textContent = 'Letters only, up to 5.'; }
+  else { msg.className = 'board-msg'; msg.textContent = 'Up to 5 letters. No numbers, symbols or spaces.'; }
+  el.value = clean;
+});
+$('#bForm').addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  const name = $('#bName').value.toUpperCase(), msg = $('#bMsg'), btn = $('#bPost');
+  const problem = nameProblem(name);
+  if (problem) { msg.className = 'board-msg bad'; msg.textContent = problem; $('#bName').focus(); return; }
+  btn.disabled = true; btn.textContent = 'Posting…';
+  try {
+    const r = await boardPost(S.day, name, S.score);
+    store.set(boardKey(S.day), {id: r.id, name: r.name}); store.set('dith:v1:boardname', r.name);
+    $('#bForm').hidden = true; $('#bStatus').hidden = false; $('#bStatus').textContent = `You're on today's board as ${r.name}.`;
+    refreshBoard();
+  } catch (e) {
+    msg.className = 'board-msg bad';
+    if (e.code === 'dupe') { store.set(boardKey(S.day), {id: null, name}); $('#bForm').hidden = true; $('#bStatus').hidden = false; $('#bStatus').textContent = 'This device already posted a score today.'; }
+    else if (e.code === 'name') msg.textContent = "That name isn't allowed. Pick another one.";
+    else if (e.code === 'closed') msg.textContent = "This day's board is closed. A new one opens with the next 7.";
+    else if (e.code === 'full') msg.textContent = "Today's board is full.";
+    else msg.textContent = "Couldn't post right now. Check your connection and try again.";
+  } finally { btn.disabled = false; btn.textContent = 'Post score'; }
+});
 
 $('#startBtn').addEventListener('click', startDaily);
 $('#practiceBtn').addEventListener('click', startPractice);
