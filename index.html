@@ -68,6 +68,8 @@ details ul{margin:10px auto 2px;padding:0 0 0 18px;max-width:420px;display:grid;
 .band p{margin:0;color:var(--muted)}
 .total{font-family:var(--display);font-size:17px;letter-spacing:.04em;font-variant-numeric:tabular-nums}
 .emojis{font-size:24px;letter-spacing:4px;text-align:center}
+.streak{text-align:center;font-family:var(--display);font-size:15px;letter-spacing:.06em;color:var(--amber)}
+.streak span{font-family:var(--body);font-weight:600;font-size:13px;letter-spacing:0;color:var(--muted)}
 .runlist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .runlist li{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:start;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.03)}
 .runlist .e{font-size:20px;line-height:1.2}
@@ -218,8 +220,10 @@ details ul{margin:10px auto 2px;padding:0 0 0 18px;max-width:420px;display:grid;
         <div class="band" id="eBand"><h2 id="eName"></h2><p id="eLine"></p></div>
         <div class="total" id="eTotal" style="text-align:center"></div>
         <div class="emojis" id="eEmojis"></div>
+        <div class="streak" id="eStreak" hidden></div>
         <div class="actions">
           <button class="btn" id="copyBtn" type="button">Copy my result</button>
+          <button class="btn ghost" id="imgBtn" type="button">Save image</button>
           <button class="btn ghost" id="practiceBtn2" type="button">Practice ∞</button>
         </div>
         <textarea class="sharebox" id="shareBox" readonly hidden aria-label="Result to copy"></textarea>
@@ -18452,11 +18456,22 @@ function next() {
   if (S.round >= ROUNDS) showEnd(); else showPrompt();
 }
 
+// Streak: consecutive Eastern days with a finished daily run, counted back from today.
+// It reads the per-day saves (store wraps every localStorage access in try/catch), so runs
+// played before the streak existed count too. A day not finished yet doesn't break it.
+function streakNow() {
+  let d = S.day, n = 0;
+  const done = (k) => { const s = store.get(dayKey(k)); return !!(s && s.done); };
+  if (!done(d)) d--;
+  for (; d >= 1 && done(d); d--) n++;
+  return n;
+}
+const emojiRow = () => S.results.map((r) => r.tier ? TIERS[r.tier].emoji : '⬛').join('');
 function shareText() {
-  const b = bandFor(S.score), emo = S.results.map((r) => r.tier ? TIERS[r.tier].emoji : '⬛').join('');
+  const b = bandFor(S.score), st = S.mode === 'daily' ? streakNow() : 0;
   const head = S.mode === 'daily' ? `Deep in the Hood #${S.day}` : 'Deep in the Hood · Practice';
   // the link turns every pasted score into a way in (and an OG card in most chat apps)
-  return `${head} · ${S.score}/700\n${emo}\n${(S.score * FT_PER_PT).toLocaleString()} ft deep · ${b.name}\nhttps://dith.app`;
+  return `${head} · ${S.score}/700\n${emojiRow()}\n${(S.score * FT_PER_PT).toLocaleString()} ft deep · ${b.name}${st >= 2 ? `\n🔥 ${st}-day streak` : ''}\nhttps://dith.app`;
 }
 function showEnd() {
   S.phase = 'end'; cancelAnimationFrame(timerRaf);
@@ -18465,7 +18480,10 @@ function showEnd() {
   $('#eLabel').textContent = S.mode === 'daily' ? `Day #${S.day} · your run` : 'Practice run';
   $('#eName').textContent = b.name; $('#eLine').textContent = b.line;
   $('#eTotal').textContent = `${S.score} PTS · ${(S.score * FT_PER_PT).toLocaleString()} FT DEEP`;
-  $('#eEmojis').textContent = S.results.map((r) => r.tier ? TIERS[r.tier].emoji : '⬛').join('');
+  $('#eEmojis').textContent = emojiRow();
+  const st = S.mode === 'daily' ? streakNow() : 0, sEl = $('#eStreak');
+  sEl.hidden = !st; sEl.textContent = st ? `🔥 ${st}-day streak` : '';
+  if (st === 1) { const tip = document.createElement('span'); tip.textContent = ' · play tomorrow to make it 2'; sEl.append(tip); }
   const list = $('#eList'); list.innerHTML = '';
   S.results.forEach((r) => {
     const p = DATA.find((d) => d.id === r.id); if (!p) return;
@@ -18482,6 +18500,8 @@ function showEnd() {
     li.append(e, mid, pts); list.append(li);
   });
   $('#shareBox').hidden = true; $('#copyBtn').textContent = window.DITH_APP ? 'Share my result' : 'Copy my result';
+  $('#imgBtn').hidden = !storyOk(); $('#imgBtn').textContent = 'Save image'; $('#imgBtn').disabled = false;
+  if (storyOk()) setTimeout(() => { if (S.phase === 'end') prepStory().catch(() => {}); }, 400); // ready before the tap, so phones can share it straight away
   $('#practiceBtn2').textContent = S.mode === 'practice' ? 'Run it back ∞' : 'Practice ∞';
   setCards('end'); setBar('none'); renderDots();
   $('#hudRound').textContent = S.mode === 'daily' ? 'Run complete' : 'Practice complete';
@@ -18490,6 +18510,152 @@ function showEnd() {
   tick(); countdownTimer = setInterval(tick, 1000);
   showBoard();
   if (window.DITH_APP) DITH_APP.onEnd(); // store app only: daily reminder button
+}
+
+// ---------- stories image ----------
+// "Save image" draws a 1080x1920 card (Instagram/TikTok Stories size) in the game's look: colors from the
+// :root tokens, Bungee/Archivo type, the night block along the bottom. Text and the link stay out of the
+// top and bottom strips the Stories UI covers. Phones get the share sheet with the file where it's
+// supported; everything else downloads it. The store app uses DITH_APP.shareImage(blob, filename) when it
+// has one (a promise that rejects on failure). Without that hook or a share sheet that takes files, the
+// app's WebView can't save a file, so the button stays hidden there.
+const isPhone = () => { try { return matchMedia('(pointer: coarse)').matches || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent); } catch (e) { return false; } };
+function canShareFiles(f) { try { return !!(navigator.canShare && navigator.canShare({files: [f || new File([''], 'x.png', {type: 'image/png'})]})); } catch (e) { return false; } }
+const appImage = () => !!window.DITH_APP && typeof DITH_APP.shareImage === 'function';
+const storyOk = () => !window.DITH_APP || appImage() || canShareFiles();
+const storyName = () => S.mode === 'daily' ? `deep-in-the-hood-day-${S.day}.png` : 'deep-in-the-hood-practice.png';
+const storyKey = () => [S.mode, S.day, S.score, emojiRow(), S.mode === 'daily' ? streakNow() : 0].join('|');
+let story = null;
+function fontsReady() {
+  try {
+    if (!document.fonts || !document.fonts.load) return Promise.resolve();
+    const all = Promise.all(['400 100px Bungee', '800 40px Archivo', '600 40px Archivo'].map((f) => document.fonts.load(f)));
+    return Promise.race([all, new Promise((r) => setTimeout(r, 2500))]).catch(() => {});
+  } catch (e) { return Promise.resolve(); }
+}
+function prepStory() {
+  const key = storyKey();
+  if (story && story.key === key) return story.promise;
+  const s = {key, blob: null};
+  s.promise = fontsReady()
+    .then(() => new Promise((res, rej) => drawStory().toBlob((b) => b ? res(b) : rej(new Error('toBlob')), 'image/png')))
+    .then((b) => { s.blob = b; return b; });
+  s.promise.catch(() => { if (story === s) story = null; });
+  story = s;
+  return s.promise;
+}
+function drawStory() {
+  const W = 1080, H = 1920, GROUND = 1730, cv = document.createElement('canvas'); cv.width = W; cv.height = H;
+  const g = cv.getContext('2d'), css = getComputedStyle(document.documentElement), tok = (n) => css.getPropertyValue(n).trim();
+  const K = {brick: tok('--brick'), amber: tok('--amber'), cream: tok('--cream'), muted: tok('--muted'), line: tok('--line'), glass: tok('--glass')};
+  const DISP = tok('--display'), BODY = tok('--body'), EMO = '"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif';
+  const tierCol = (t) => tok(t ? `--t-${t}` : '--t-miss');
+  const rnd = mulberry32(0xD17 + S.day * 31 + S.score);
+  const b = bandFor(S.score), st = S.mode === 'daily' ? streakNow() : 0;
+  const font = (px, fam = DISP, wt = 400) => `${wt} ${px}px ${fam}`;
+  const fit = (txt, px, maxW, fam, wt) => { g.font = font(px, fam, wt); while (px > 24 && g.measureText(txt).width > maxW) { px -= 2; g.font = font(px, fam, wt); } return px; };
+  const rr = (x, y, w, h, r) => { g.beginPath(); g.moveTo(x + r, y); g.arcTo(x + w, y, x + w, y + h, r); g.arcTo(x + w, y + h, x, y + h, r); g.arcTo(x, y + h, x, y, r); g.arcTo(x, y, x + w, y, r); g.closePath(); };
+  const glow = (x, y, r, col, a) => { const gr = g.createRadialGradient(x, y, 0, x, y, r); gr.addColorStop(0, `rgba(${col},${a})`); gr.addColorStop(1, `rgba(${col},0)`); g.fillStyle = gr; g.fillRect(x - r, y - r, r * 2, r * 2); };
+  const spaced = (txt, cx, y, sp) => { const cs = [...txt], ws = cs.map((c) => g.measureText(c).width); let x = cx - (ws.reduce((a, w) => a + w, 0) + sp * (cs.length - 1)) / 2; g.textAlign = 'left'; cs.forEach((c, i) => { g.fillText(c, x, y); x += ws[i] + sp; }); g.textAlign = 'center'; };
+  // pieces in different fonts on one baseline, centered as a group
+  const row = (parts, cx, y) => {
+    const ws = parts.map((p) => { g.font = p.f; return g.measureText(p.t).width + (p.gap || 0); });
+    let x = cx - ws.reduce((a, w) => a + w, 0) / 2; g.textAlign = 'left';
+    parts.forEach((p, i) => { g.font = p.f; if (p.sh) { g.fillStyle = p.sh; g.fillText(p.t, x + p.so, y + p.so); } g.fillStyle = p.c; g.fillText(p.t, x, y); x += ws[i]; });
+    g.textAlign = 'center';
+  };
+
+  // night sky (the street's last sky stops), stars, moon
+  const sky = g.createLinearGradient(0, 0, 0, GROUND);
+  sky.addColorStop(0, '#0F0C24'); sky.addColorStop(0.55, '#2B2147'); sky.addColorStop(1, '#7B4A7A');
+  g.fillStyle = sky; g.fillRect(0, 0, W, H);
+  g.fillStyle = K.cream;
+  for (let i = 0; i < 90; i++) { const x = rnd() * W, y = rnd() * 1250, r = rnd() < 0.2 ? 3 : 1.8; g.globalAlpha = 0.25 + rnd() * 0.6; g.beginPath(); g.arc(x, y, r, 0, 7); g.fill(); }
+  g.globalAlpha = 1;
+  glow(860, 190, 230, '247,233,212', 0.2);
+  g.fillStyle = K.cream; g.beginPath(); g.arc(860, 190, 62, 0, 7); g.fill();
+  g.fillStyle = sky; g.beginPath(); g.arc(888, 174, 56, 0, 7); g.fill();
+
+  // far skyline with blinking antennas, then the brick block with lit windows
+  for (let x = -20; x < W;) {
+    const w = 60 + rnd() * 90, h = 170 + rnd() * 250, top = GROUND - h;
+    g.fillStyle = '#3A2B57'; g.fillRect(x, top, w - 4, h);
+    g.fillStyle = 'rgba(255,210,122,.3)';
+    for (let k = 0; k < 6; k++) if (rnd() < 0.5) g.fillRect(x + 10 + rnd() * (w - 30), top + 20 + rnd() * (h - 60), 8, 12);
+    if (rnd() < 0.35) { g.fillStyle = '#3A2B57'; g.fillRect(x + w / 2 - 3, top - 40, 6, 40); glow(x + w / 2, top - 42, 18, '239,91,110', 0.8); g.fillStyle = tierCol('r'); g.beginPath(); g.arc(x + w / 2, top - 42, 5, 0, 7); g.fill(); }
+    x += w;
+  }
+  const FACADES = ['#7A3E2E', '#8E4A33', '#5E3A4A', '#A0694A', '#4E3B5C', '#6D4C3D']; // same brick as the street
+  for (let x = -30; x < W;) {
+    const w = 150 + rnd() * 90, h = 150 + rnd() * 140, top = GROUND - h;
+    g.fillStyle = FACADES[Math.floor(rnd() * FACADES.length)]; g.fillRect(x, top, w - 6, h);
+    g.fillStyle = 'rgba(16,12,31,.45)'; g.fillRect(x, top, w - 6, h);
+    g.fillStyle = 'rgba(0,0,0,.35)'; g.fillRect(x - 4, top - 10, w + 2, 12);
+    const cols = Math.max(2, Math.floor((w - 30) / 50)), rows = Math.max(1, Math.floor((h - 60) / 70)), cw = (w - 46) / cols;
+    for (let r = 0; r < rows; r++) for (let k = 0; k < cols; k++) {
+      const wx = x + 20 + k * cw, wy = top + 26 + r * 70, lit = rnd() < 0.5;
+      if (lit) glow(wx + cw / 2 - 7, wy + 20, 60, '255,200,110', 0.3);
+      g.fillStyle = lit ? '#FFD27A' : '#2A2238'; g.fillRect(wx, wy, cw - 14, 40);
+    }
+    x += w;
+  }
+  // sidewalk, street, a streetlight
+  g.fillStyle = '#3B2E4A'; g.fillRect(0, GROUND, W, 36);
+  g.fillStyle = 'rgba(0,0,0,.4)'; g.fillRect(0, GROUND + 36, W, 6);
+  g.fillStyle = '#1B1529'; g.fillRect(0, GROUND + 42, W, H - GROUND - 42);
+  g.fillStyle = K.amber; g.globalAlpha = 0.5; for (let x = 20; x < W; x += 140) g.fillRect(x, GROUND + 112, 80, 10); g.globalAlpha = 1;
+  g.fillStyle = '#17121F'; g.fillRect(104, 1340, 12, GROUND - 1340); g.fillRect(104, 1340, 74, 10);
+  glow(172, 1362, 270, '255,200,110', 0.4);
+  g.fillStyle = '#FFE3A3'; rr(152, 1348, 46, 18, 8); g.fill();
+
+  // title, with the same stacked brick shadow as the title card
+  g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+  const tpx = Math.min(fit('DEEP IN', 140, 900), fit('THE HOOD', 140, 900));
+  g.font = font(tpx);
+  [['DEEP IN', 380], ['THE HOOD', 380 + Math.round(tpx * 0.98)]].forEach(([t, y]) => {
+    g.fillStyle = 'rgba(0,0,0,.35)'; g.fillText(t, W / 2 + 16, y + 16);
+    g.fillStyle = K.brick; g.fillText(t, W / 2 + 8, y + 8);
+    g.fillStyle = K.amber; g.fillText(t, W / 2, y);
+  });
+  g.font = font(38); g.fillStyle = K.cream; spaced('THE DAILY 7', W / 2, 588, 12);
+
+  // the run card
+  g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = 40; g.shadowOffsetY = 10;
+  rr(60, 630, W - 120, 850, 40); g.fillStyle = K.glass; g.fill();
+  g.shadowColor = 'transparent'; g.shadowBlur = 0; g.shadowOffsetY = 0;
+  g.lineWidth = 3; g.strokeStyle = K.line; g.stroke();
+  g.font = font(34, BODY, 800); g.fillStyle = K.muted; spaced(S.mode === 'daily' ? `DAY #${S.day}` : 'PRACTICE RUN', W / 2, 712, 6);
+  row([{t: String(S.score), f: font(230), c: K.amber, sh: K.brick, so: 8, gap: 12}, {t: '/700', f: font(80), c: K.cream}], W / 2, 925);
+  g.font = font(54); g.fillStyle = K.cream; spaced(`${(S.score * FT_PER_PT).toLocaleString()} FT DEEP`, W / 2, 1000, 3);
+  g.setLineDash([14, 12]); g.lineWidth = 3; g.strokeStyle = K.line; g.beginPath(); g.moveTo(140, 1045); g.lineTo(W - 140, 1045); g.stroke(); g.setLineDash([]);
+  const name = b.name.toUpperCase();
+  fit(name, 92, 860); g.fillStyle = tierCol(b.tier); g.fillText(name, W / 2, 1130);
+  fit(b.line, 38, 860, BODY, 600); g.fillStyle = K.muted; g.fillText(b.line, W / 2, 1188);
+  const tw = 112, gap = 16, x0 = W / 2 - (ROUNDS * tw + (ROUNDS - 1) * gap) / 2, ty = 1229;
+  for (let i = 0; i < ROUNDS; i++) {
+    const r = S.results[i], t = r && r.tier, x = x0 + i * (tw + gap);
+    rr(x, ty, tw, tw, 24);
+    g.globalAlpha = 0.16; g.fillStyle = tierCol(t); g.fill(); g.globalAlpha = 1;
+    g.lineWidth = 6; g.strokeStyle = tierCol(t); g.stroke();
+    g.font = `400 62px ${EMO}`; g.textBaseline = 'middle'; g.fillStyle = K.cream;
+    g.fillText(t ? TIERS[t].emoji : '⬛', x + tw / 2, ty + tw / 2 + 4); g.textBaseline = 'alphabetic';
+  }
+  if (st >= 2) row([{t: '🔥', f: `400 46px ${EMO}`, c: K.amber, gap: 16}, {t: `${st}-DAY STREAK`, f: font(46), c: K.amber}], W / 2, 1430);
+  else { fit('RARER ANSWERS, DEEPER YOU GO.', 34, 860); g.fillStyle = K.cream; g.globalAlpha = 0.75; g.fillText('RARER ANSWERS, DEEPER YOU GO.', W / 2, 1428); g.globalAlpha = 1; }
+
+  // the way in
+  g.font = font(64);
+  const link = 'DITH.APP', pw = g.measureText(link).width + 120, ph = 110, py = 1505;
+  g.shadowColor = 'rgba(0,0,0,.5)'; g.shadowBlur = 30; g.shadowOffsetY = 8;
+  rr(W / 2 - pw / 2, py, pw, ph, 22); g.fillStyle = K.amber; g.fill();
+  g.shadowColor = 'transparent'; g.shadowBlur = 0; g.shadowOffsetY = 0;
+  g.fillStyle = '#21140A'; g.textBaseline = 'middle'; g.fillText(link, W / 2, py + ph / 2 + 4); g.textBaseline = 'alphabetic';
+  return cv;
+}
+function saveFile(blob, name) {
+  const url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = name; document.body.append(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 30000);
 }
 
 // ---------- daily scoreboard (optional) ----------
@@ -18634,6 +18800,25 @@ $('#copyBtn').addEventListener('click', () => {
   const fallback = () => { box.value = txt; box.hidden = false; box.focus(); box.select(); $('#copyBtn').textContent = 'Select and copy'; };
   const copy = () => { try { navigator.clipboard.writeText(txt).then(() => { $('#copyBtn').textContent = 'Copied'; }, fallback); } catch (e) { fallback(); } };
   if (window.DITH_APP) DITH_APP.share(txt).catch(copy); else copy(); // store app: native share sheet
+});
+$('#imgBtn').addEventListener('click', async () => {
+  const btn = $('#imgBtn'), name = storyName();
+  // Usually drawn already (showEnd starts it), so the share sheet opens inside the tap, as Safari requires.
+  let blob = story && story.key === storyKey() ? story.blob : null;
+  if (!blob) {
+    btn.disabled = true; btn.textContent = 'Drawing…';
+    try { blob = await prepStory(); } catch (e) { blob = null; }
+    btn.disabled = false;
+    if (!blob) { btn.textContent = "Couldn't draw it. Try again"; return; }
+  }
+  if (appImage()) { try { await DITH_APP.shareImage(blob, name); btn.textContent = 'Save image'; return; } catch (e) { /* try the web share sheet */ } }
+  let file = null; try { file = new File([blob], name, {type: 'image/png'}); } catch (e) {}
+  if (file && (isPhone() || window.DITH_APP) && canShareFiles(file)) {
+    try { await navigator.share({files: [file]}); btn.textContent = 'Save image'; return; }
+    catch (e) { if (e && e.name === 'AbortError') { btn.textContent = 'Save image'; return; } } // other errors: download instead
+  }
+  if (window.DITH_APP) { btn.textContent = "Couldn't share the image"; return; }
+  saveFile(blob, name); btn.textContent = 'Image saved';
 });
 
 // self-check of the question bank (console only). With thousands of prompts, indexing them all
