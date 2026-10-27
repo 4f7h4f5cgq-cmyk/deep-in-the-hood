@@ -879,7 +879,7 @@ const DATA = [
 {id:'media-moviemusicals', q:"Name a movie musical with a mostly Black cast", like:"The Wiz", t:{
  b:`The Wiz|Wiz; Dreamgirls; The Color Purple|Color Purple; Sparkle; Carmen Jones`,
  s:`Porgy and Bess; Stormy Weather`,
- l:`Cabin in the Sky; Purple Rain; Jingle Jangle: A Christmas Journey|Jingle Jangle; The Fighting Temptations|Fighting Temptations; Idlewild; Black Nativity; Lady Sings the Blues; Krush Groove; Beat Street; The Five Heartbeats|Five Heartbeats; St. Louis Blues|St Louis Blues; The Wiz Live!|The Wiz Live; Annie; The Green Pastures|Green Pastures; Carmen: A Hip Hopera|Carmen A Hip Hopera`},
+ l:`Cabin in the Sky; Purple Rain; Jingle Jangle: A Christmas Journey|Jingle Jangle; The Fighting Temptations|Fighting Temptations; Idlewild; Black Nativity; Lady Sings the Blues; Krush Groove; Beat Street; The Five Heartbeats|Five Heartbeats; St. Louis Blues|St Louis Blues; The Wiz Live!|The Wiz Live; The Green Pastures|Green Pastures; Carmen: A Hip Hopera|Carmen A Hip Hopera`},
  gem:`Hallelujah`},
 
 {id:'africa-parks', q:"Name a national park or game reserve in Africa", like:"Serengeti", t:{
@@ -898,7 +898,7 @@ const DATA = [
  b:`The Jacksons|Jackson family|Jackson 5|Jacksons; The Obamas|Obama family|Obamas; The Wayans|Wayans family|Wayans brothers; The Williams sisters|Venus and Serena; The Knowles family|Beyonce and Solange|Knowles`,
  s:`The Smiths (Will, Jada, Jaden and Willow)|Smith family; The Marsalis family|Marsalis`,
  l:`The King family|Kings; The Braxtons|Braxton family|Braxton sisters; The Winans|Winans family; The Clark Sisters; The Isley Brothers|Isleys; The DeBarges|DeBarge family; The Pointer Sisters; The Currys|Curry family; The Ball family|Ball brothers; The Mowrys|Mowry family; The Hines brothers|Gregory and Maurice Hines; The Nicholas Brothers; The Staple Singers|Staples family; The Neville Brothers|Nevilles; The Sanders family|Deion and his sons; The Griffeys|Griffey family; The Bonds family|Bobby and Barry Bonds; The Holiday brothers|Holidays; The Marleys|Marley family; The Murphy brothers|Eddie and Charlie Murphy; The Spinks brothers; The Charlo twins; The Barber twins|Tiki and Ronde; The Sharpe brothers|Shannon and Sterling Sharpe`},
- gem:`The Hairstons|Hairston family`},
+ gem:`The Delany Sisters|Delany sisters|Delany family|Sadie and Bessie Delany`},
 
 {id:'life-garden', q:"Name something growing in Granddaddy's garden", like:"collard greens", t:{
  b:`Collard greens|collards|greens; Tomatoes; Okra; Sweet potatoes; Corn`,
@@ -916,15 +916,14 @@ const DATA = [
 {id:'sport-nba80s', q:"Name a Black NBA star of the 1980s", like:"Magic Johnson", people:true, t:{
  b:`Magic Johnson; Michael Jordan; Isiah Thomas; Dominique Wilkins|Nique; Kareem Abdul-Jabbar|Kareem`,
  s:`Moses Malone; Julius Erving|Dr. J`,
- l:`Patrick Ewing; Hakeem Olajuwon|Akeem Olajuwon; Charles Barkley; Clyde Drexler; James Worthy; Bernard King; Adrian Dantley; Mark Aguirre; Sidney Moncrief; Rolando Blackman; World B. Free; Larry Nance; Robert Parish; Dennis Johnson; Joe Dumars; Michael Cooper; Byron Scott; Otis Thorpe; Terry Cummings; Ralph Sampson; Dale Ellis; Purvis Short; Maurice Cheeks|Mo Cheeks; Andrew Toney; Buck Williams; Jeff Malone; Karl Malone; Kevin Johnson; Dennis Rodman; Vinnie Johnson|The Microwave; Spud Webb; Tim Hardaway`},
+ l:`Patrick Ewing; Hakeem Olajuwon|Akeem Olajuwon; Charles Barkley; Clyde Drexler; James Worthy; Bernard King; Adrian Dantley; Mark Aguirre; Sidney Moncrief; Rolando Blackman; World B. Free; Larry Nance; Robert Parish; Dennis Johnson; Joe Dumars; Michael Cooper; Byron Scott; Otis Thorpe; Terry Cummings; Ralph Sampson; Dale Ellis; Purvis Short; Maurice Cheeks|Mo Cheeks; Andrew Toney; Buck Williams; Jeff Malone; Karl Malone; Kevin Johnson; Dennis Rodman; Vinnie Johnson|The Microwave; Spud Webb`},
  gem:`Alex English`},
 
-{id:'song-ghostface', q:"Name a Ghostface Killah song", like:"Cherchez LaGhost", t:{
- b:`Cherchez LaGhost; Apollo Kids; Back Like That; All That I Got Is You; Daytona 500`,
- s:`Mighty Healthy; Run`,
- l:`Nutmeg; The Champ; Be Easy; Never Be the Same Again; Holla; Shakey Dog; Camay; Child's Play; Iron Maiden`,
- r:`Ghost Deini; One; Winter Warz; Tush; Save Me Dear; Beauty Jackson`},
- gem:`Motherless Child`},
+{id:'life-funny', q:"Name a way to say something is hilarious", like:"I'm weak", t:{
+ b:`I'm weak|Im weak|weak; I'm dead|Im dead|dead; I'm crying|crying; I can't|I cant; Stop!|stop`,
+ s:`I'm done|done; I'm hollering|hollering|hollerin`,
+ l:`I fell out|fell out; I'm screaming|screaming; Deceased; I'm wheezing|wheezing; Ain't no way|aint no way; Boy, stop|Girl, stop; Chile; Bruh; Rolling|ROFL; LMAO|LMFAO; Cracking up; That's crazy|thats crazy; I'm in tears|in tears; I'm dying|dying; Cackling`},
+ gem:`I'm tickled|tickled`},
 
 {id:'music-gogo', q:"Name a go-go band or artist", like:"Chuck Brown", t:{
  b:`Chuck Brown|Chuck Brown and the Soul Searchers|The Soul Searchers; Rare Essence; Trouble Funk; E.U.|EU|Experience Unlimited`,
@@ -939,13 +938,13 @@ const DATA = [
  l:`Mauritania; Gambia|The Gambia; Guinea-Bissau; Guinea; Sierra Leone; Liberia; Ivory Coast|Côte d'Ivoire|Cote d'Ivoire; Togo; Benin; Cameroon; Equatorial Guinea; Gabon; Republic of the Congo|Congo-Brazzaville; Democratic Republic of the Congo|DR Congo|DRC; Cape Verde|Cabo Verde`},
  gem:`São Tomé and Príncipe|Sao Tome and Principe|São Tomé|Sao Tome`},
 
-{id:'gen-nflplayer', q:"Name a famous Black NFL player", like:"Jerry Rice", people:true, t:{
- b:`Jerry Rice; Jim Brown; Walter Payton; Barry Sanders; Deion Sanders|Prime Time; Emmitt Smith`,
- s:`Patrick Mahomes; Lamar Jackson`,
- l:`Randy Moss; Terrell Owens|T.O.|TO; Calvin Johnson|Megatron; Adrian Peterson|AP; Marshall Faulk; Eric Dickerson; Tony Dorsett; Gale Sayers; Reggie White; Bruce Smith; Michael Strahan|Strahan; Jerome Bettis|The Bus; Marshawn Lynch|Beast Mode; Ed Reed; Charles Woodson; Rod Woodson; Ronnie Lott; Michael Irvin; Warren Moon; Doug Williams; Michael Vick; Cam Newton; Russell Wilson; Jalen Hurts; Derrick Henry; Saquon Barkley; Aaron Donald; Odell Beckham Jr.|OBJ; Larry Fitzgerald; Cris Carter; LaDainian Tomlinson|LT; Shannon Sharpe; Ja'Marr Chase|JaMarr Chase; Justin Jefferson; Earl Campbell; Bo Jackson; Thurman Thomas; Devin Hester; Champ Bailey; Darrell Green; Brian Dawkins; Steve McNair`,
- r:`Mean Joe Greene|Joe Greene; Lynn Swann; Franco Harris; Mel Blount; Night Train Lane|Dick Night Train Lane; Deacon Jones; Sterling Sharpe; Andre Johnson; Warrick Dunn; Michael Oher`,
- o:`Kenny Washington; Marion Motley; Bill Willis`},
- gem:`Fritz Pollard`},
+{id:'sport-mlb', q:"Name a Black MLB star, past or present", like:"Ken Griffey Jr.", people:true, t:{
+ b:`Ken Griffey Jr.|Griffey|Junior Griffey; Jackie Robinson; Hank Aaron; Willie Mays; Barry Bonds`,
+ s:`Derek Jeter; Mookie Betts`,
+ l:`Reggie Jackson|Mr. October; Rickey Henderson; Tony Gwynn; Bo Jackson; Ernie Banks|Mr. Cub; Frank Robinson; Bob Gibson; Joe Morgan; Ozzie Smith|The Wizard; Dave Winfield; Kirby Puckett; Lou Brock; Willie McCovey; Willie Stargell|Pops; Andre Dawson|The Hawk; Jim Rice; Eddie Murray; Dave Parker|The Cobra; Fred McGriff|Crime Dog; Frank Thomas|Big Hurt; Gary Sheffield; CC Sabathia; David Price; Ryan Howard; Jimmy Rollins; Andrew McCutchen|Cutch; Roberto Clemente; David Ortiz|Big Papi; Torii Hunter; Dontrelle Willis|D-Train; Curtis Granderson; Jason Heyward; Adam Jones; Byron Buxton; Michael Harris II; Kenny Lofton; Ferguson Jenkins|Fergie Jenkins; Cecil Fielder; Prince Fielder; Larry Doby; Roy Campanella; Jazz Chisholm Jr.|Jazz Chisholm; Elly De La Cruz`,
+ r:`Willie Randolph; Tim Raines; Dick Allen; Curt Flood; Maury Wills; Billy Williams; Joe Carter; Lou Whitaker; Bobby Bonds; Ken Griffey Sr.; Vida Blue; Dave Stewart; Lee Smith; Hal McRae; George Foster; Vince Coleman; Mudcat Grant; J.R. Richard|JR Richard; Carl Crawford; Matt Kemp`,
+ o:`Elston Howard; Minnie Miñoso|Minnie Minoso; Earl Wilson; Don Newcombe; Dan Bankhead`},
+ gem:`Moses Fleetwood Walker|Fleet Walker|Fleetwood Walker`},
 
 {id:'from-illinois', q:"Name a famous Black person from Illinois", like:"Michelle Obama", people:true, t:{
  b:`Michelle Obama; Bernie Mac; Jennifer Hudson; Common; Dwyane Wade`,
@@ -954,12 +953,12 @@ const DATA = [
  r:`Quentin Richardson; Carol Moseley Braun; Jesse White; Bo Diddley`},
  gem:`Oscar Brown Jr.`},
 
-{id:'song-rema', q:"Name a Rema song", like:"Calm Down", t:{
- b:`Calm Down; Dumebi; Woman; Bounce`,
- s:`Soundgasm; Charm`,
- l:`Ginger Me; Beamer (Bad Boys)|Beamer; FYN; Ozeba; Azaman; Holiday; HEHEHE|Hehehe; Baby (Is It a Crime)|Baby Is It a Crime; Benin Boys`,
- r:`Lady; Why; DND; Reason You; Spiderman`},
- gem:`Iron Man`},
+{id:'surname-jones', q:"Name a famous Black person with the last name Jones", like:"Quincy Jones", people:true, t:{
+ b:`Quincy Jones; James Earl Jones; Grace Jones; Leslie Jones; Deacon Jones`,
+ s:`Bill T. Jones; Elvin Jones`,
+ l:`K.C. Jones|KC Jones; Sam Jones; Hank Jones; Thad Jones; Philly Joe Jones; Jo Jones; Booker T. Jones; Roy Jones Jr.; Marion Jones; Ed "Too Tall" Jones|Too Tall Jones; Julio Jones; Chandler Jones; Aaron Jones; Tyus Jones; Bobby Jones; Caldwell Jones; Eddie Jones; Lolo Jones; Rashida Jones; Orlando Jones; Tamala Jones; Mike Jones; Jim Jones; Sharon Jones; Etta Jones; Lil' Kim|Kimberly Jones|Lil Kim; Van Jones`,
+ r:`Edward P. Jones; Gayl Jones; Amiri Baraka|LeRoi Jones; Absalom Jones; Frederick McKinley Jones; Elaine Jones; Nathaniel R. Jones; Clara Stanton Jones`},
+ gem:`Claudia Jones`},
 
 {id:'music-festivals', q:"Name a festival or concert celebrating Black music", like:"Essence Festival", t:{
  b:`Essence Festival|Essence Fest|Essence Festival of Culture; Afropunk; Roots Picnic`,
@@ -1539,12 +1538,11 @@ const DATA = [
  r:`Rich Boy; Jack Whitten; Margaret and Roumania Peters|Margaret Peters|Roumania Peters; Claude Barnett|Claude Albert Barnett; Chauncey Eskridge; Chokwe Antar Lumumba; Ptolemy Reid; Drayton Florence; Ken Howell`},
  gem:`Albert Murray`},
 
-{id:'people-astronomers', q:"Name a Black astronomer or space scientist", like:"Neil deGrasse Tyson", people:true, t:{
- b:`Neil deGrasse Tyson|Neil Tyson; Benjamin Banneker; George Carruthers; Hakeem Oluseyi`,
- s:`Jedidah Isler; Beth Brown`,
- l:`Aomawa Shields; Jarita Holbrook; Arthur B. C. Walker Jr.|Arthur Walker; Aprille Ericsson-Jackson; Chanda Prescod-Weinstein; Valerie Thomas; Katherine Johnson`,
- r:`Charles McGruder; Dara Norman; Nia Imara; Mercedes Richards; John Asher Johnson; Derrick Pitts; Ashley Walker`},
- gem:`Harvey Washington Banks|Harvey Banks`},
+{id:'gen-shaq', q:"Name something tied to Shaquille O'Neal", like:"Kazaam", t:{
+ b:`Kazaam; Los Angeles Lakers|Lakers; Orlando Magic|Magic; Inside the NBA|Inside the NBA on TNT|TNT; Kobe Bryant|Kobe`,
+ s:`Shaq Diesel; Icy Hot`,
+ l:`Blue Chips; Steel; Shaq Fu; LSU|Louisiana State University|LSU Tigers; Miami Heat|Heat; Phoenix Suns|Suns; Cleveland Cavaliers|Cavaliers|Cavs; Boston Celtics|Celtics; Shaqtin' a Fool|Shaqtin a Fool; Hack-a-Shaq|Hack a Shaq; Free throws; Gold Bond; Papa John's|Papa Johns; The General|The General insurance; Big Chicken; Reebok Shaq Attaq|Shaq Attaq|Reebok; Four championships|4 rings|four rings; 2000 MVP|MVP; The Big Aristotle|Big Aristotle; The Diesel|Diesel; Superman; Penny Hardaway|Penny; Newark|Newark, New Jersey; Broken backboard|backboards; Basketball Hall of Fame|Hall of Fame; DJ Diesel; Carnival Cruise Line|Carnival; (I Know I Got) Skillz|Skillz; The Big Shaqtus|Big Shaqtus`},
+ gem:`Doctorate from Barry University|Doctorate|Dr. O'Neal|Dr. Shaq|Barry University|Ed.D.`},
 
 {id:'sport-mma', q:"Name a Black UFC or MMA fighter", like:"Israel Adesanya", people:true, t:{
  b:`Israel Adesanya|Izzy|The Last Stylebender; Kamaru Usman; Jon Jones|Bones Jones; Francis Ngannou; Daniel Cormier|DC`,
@@ -4457,11 +4455,12 @@ const DATA = [
  l:`WGCI; WHUR; V-103|WVEE|V103; KJLH; WJLB; KDAY; Power 106|KPWR; 92Q|WERQ; WOL; WKYS; WPGC; Hot 107.9|WHTA; WDAS; Majic 102|KMJQ; 97.9 The Box|The Box|KBXX; 99 Jamz|WEDR`},
  gem:`WERD`},
 
-{id:'life-funny', q:"Name a way to say something is hilarious", like:"I'm weak", t:{
- b:`I'm weak|Im weak|weak; I'm dead|Im dead|dead; I'm crying|crying; I can't|I cant; Stop!|stop`,
- s:`I'm done|done; I'm hollering|hollering|hollerin`,
- l:`I fell out|fell out; I'm screaming|screaming; Deceased; I'm wheezing|wheezing; Ain't no way|aint no way; Boy, stop|Girl, stop; Chile; Bruh; Rolling|ROFL; LMAO|LMFAO; Cracking up; That's crazy|thats crazy; I'm in tears|in tears; I'm dying|dying; Cackling`},
- gem:`I'm tickled|tickled`},
+{id:'chars-cosbyshow', q:"Name a character from The Cosby Show", like:"Cliff Huxtable", t:{
+ b:`Cliff Huxtable|Cliff|Heathcliff Huxtable; Clair Huxtable|Clair; Theo Huxtable|Theo; Rudy Huxtable|Rudy; Denise Huxtable|Denise`,
+ s:`Vanessa Huxtable|Vanessa; Sondra Huxtable|Sondra`,
+ l:`Olivia Kendall|Olivia; Martin Kendall|Martin; Elvin Tibideaux|Elvin; Cockroach; Kenny|Bud; Pam Tucker|Pam; Russell Huxtable|Grandpa Huxtable; Anna Huxtable|Grandma Huxtable; Denny; Justine Phillips|Justine`,
+ r:`Nelson Tibideaux|Nelson; Winnie Tibideaux|Winnie; Dabnis Brickey|Dabnis; Charmaine Brown|Charmaine`},
+ gem:`Peter Chiara|Peter`},
 
 {id:'gen-soultrain', q:"Name someone or something tied to Soul Train", like:"Don Cornelius", t:{
  b:`Don Cornelius|Cornelius; Soul Train Line|The Soul Train Line; Love, peace and soul|Love peace and soul|We wish you love peace and soul`,
@@ -5039,13 +5038,13 @@ const DATA = [
  l:`Lawyer Milloy; Corey Dillon; Stanley Morgan; Troy Brown; Kevin Faulk; Deion Branch; Asante Samuel; Richard Seymour; Devin McCourty; Jason McCourty; Matthew Slater; Malcolm Butler; Stephon Gilmore; James White; Dont'a Hightower|Donta Hightower; Rodney Harrison; Chandler Jones; Patrick Chung; Sony Michel; Jerod Mayo; Jim Nance; Houston Antwine; Irving Fryar; LeGarrette Blount`},
  gem:`Sam Cunningham|Sam "Bam" Cunningham|Bam Cunningham`},
 
-{id:'sport-mlb', q:"Name a Black MLB star, past or present", like:"Ken Griffey Jr.", people:true, t:{
- b:`Ken Griffey Jr.|Griffey|Junior Griffey; Jackie Robinson; Hank Aaron; Willie Mays; Barry Bonds`,
- s:`Derek Jeter; Mookie Betts`,
- l:`Reggie Jackson|Mr. October; Rickey Henderson; Tony Gwynn; Bo Jackson; Ernie Banks|Mr. Cub; Frank Robinson; Bob Gibson; Joe Morgan; Ozzie Smith|The Wizard; Dave Winfield; Kirby Puckett; Lou Brock; Willie McCovey; Willie Stargell|Pops; Andre Dawson|The Hawk; Jim Rice; Eddie Murray; Dave Parker|The Cobra; Fred McGriff|Crime Dog; Frank Thomas|Big Hurt; Gary Sheffield; CC Sabathia; David Price; Ryan Howard; Jimmy Rollins; Andrew McCutchen|Cutch; Roberto Clemente; David Ortiz|Big Papi; Torii Hunter; Dontrelle Willis|D-Train; Curtis Granderson; Jason Heyward; Adam Jones; Byron Buxton; Michael Harris II; Kenny Lofton; Ferguson Jenkins|Fergie Jenkins; Cecil Fielder; Prince Fielder; Larry Doby; Roy Campanella; Jazz Chisholm Jr.|Jazz Chisholm; Elly De La Cruz`,
- r:`Willie Randolph; Tim Raines; Dick Allen; Curt Flood; Maury Wills; Billy Williams; Joe Carter; Lou Whitaker; Bobby Bonds; Ken Griffey Sr.; Vida Blue; Dave Stewart; Lee Smith; Hal McRae; George Foster; Vince Coleman; Mudcat Grant; J.R. Richard|JR Richard; Carl Crawford; Matt Kemp`,
- o:`Elston Howard; Minnie Miñoso|Minnie Minoso; Earl Wilson; Don Newcombe; Dan Bankhead`},
- gem:`Moses Fleetwood Walker|Fleet Walker|Fleetwood Walker`},
+{id:'gen-nflplayer', q:"Name a famous Black NFL player", like:"Jerry Rice", people:true, t:{
+ b:`Jerry Rice; Jim Brown; Walter Payton; Barry Sanders; Deion Sanders|Prime Time; Emmitt Smith`,
+ s:`Patrick Mahomes; Lamar Jackson`,
+ l:`Randy Moss; Terrell Owens|T.O.|TO; Calvin Johnson|Megatron; Adrian Peterson|AP; Marshall Faulk; Eric Dickerson; Tony Dorsett; Gale Sayers; Reggie White; Bruce Smith; Michael Strahan|Strahan; Jerome Bettis|The Bus; Marshawn Lynch|Beast Mode; Ed Reed; Charles Woodson; Rod Woodson; Ronnie Lott; Michael Irvin; Warren Moon; Doug Williams; Michael Vick; Cam Newton; Russell Wilson; Jalen Hurts; Derrick Henry; Saquon Barkley; Aaron Donald; Odell Beckham Jr.|OBJ; Larry Fitzgerald; Cris Carter; LaDainian Tomlinson|LT; Shannon Sharpe; Ja'Marr Chase|JaMarr Chase; Justin Jefferson; Earl Campbell; Bo Jackson; Thurman Thomas; Devin Hester; Champ Bailey; Darrell Green; Brian Dawkins; Steve McNair`,
+ r:`Mean Joe Greene|Joe Greene; Lynn Swann; Franco Harris; Mel Blount; Night Train Lane|Dick Night Train Lane; Deacon Jones; Sterling Sharpe; Andre Johnson; Warrick Dunn; Michael Oher`,
+ o:`Kenny Washington; Marion Motley; Bill Willis`},
+ gem:`Fritz Pollard`},
 
 {id:'people-theaterfounders', q:"Name a founder or leader of a Black theater company", like:"Barbara Ann Teer", people:true, t:{
  b:`Barbara Ann Teer; Douglas Turner Ward; Robert Hooks; Woodie King Jr.`,
@@ -5836,12 +5835,12 @@ const DATA = [
  l:`Zanele Muholi; Wangechi Mutu; Julie Mehretu; Njideka Akunyili Crosby; Toyin Ojih Odutola; Ben Enwonwu; Uche Okeke; Bruce Onobrakpeya; Malangatana; Esther Mahlangu; Gerard Sekoto; Ernest Mancoba; Romuald Hazoumè|Romuald Hazoume; Abdoulaye Konaté|Abdoulaye Konate; Ouattara Watts; Amoako Boafo; Ablade Glover; Peju Alatise`},
  gem:`Twins Seven-Seven`},
 
-{id:'chars-cosbyshow', q:"Name a character from The Cosby Show", like:"Cliff Huxtable", t:{
- b:`Cliff Huxtable|Cliff|Heathcliff Huxtable; Clair Huxtable|Clair; Theo Huxtable|Theo; Rudy Huxtable|Rudy; Denise Huxtable|Denise`,
- s:`Vanessa Huxtable|Vanessa; Sondra Huxtable|Sondra`,
- l:`Olivia Kendall|Olivia; Martin Kendall|Martin; Elvin Tibideaux|Elvin; Cockroach; Kenny|Bud; Pam Tucker|Pam; Russell Huxtable|Grandpa Huxtable; Anna Huxtable|Grandma Huxtable; Denny; Justine Phillips|Justine`,
- r:`Nelson Tibideaux|Nelson; Winnie Tibideaux|Winnie; Dabnis Brickey|Dabnis; Charmaine Brown|Charmaine`},
- gem:`Peter Chiara|Peter`},
+{id:'song-ghostface', q:"Name a Ghostface Killah song", like:"Cherchez LaGhost", t:{
+ b:`Cherchez LaGhost; Apollo Kids; Back Like That; All That I Got Is You; Daytona 500`,
+ s:`Mighty Healthy; Run`,
+ l:`Nutmeg; The Champ; Be Easy; Never Be the Same Again; Holla; Shakey Dog; Camay; Child's Play; Iron Maiden`,
+ r:`Ghost Deini; One; Winter Warz; Tush; Save Me Dear; Beauty Jackson`},
+ gem:`Motherless Child`},
 
 {id:'stars-chappelle', q:"Name a movie or show starring Dave Chappelle", like:"Chappelle's Show", t:{
  b:`Chappelle's Show|Chappelles Show; Half Baked; The Nutty Professor|Nutty Professor; A Star Is Born|Star Is Born`,
@@ -6850,12 +6849,12 @@ const DATA = [
  r:`In the House; Coach; The League|League; Workaholics; The Blacklist|Blacklist; Death to 2020; Hit-Monkey; American Dad!|American Dad; Phineas and Ferb; DMV; Christmas in Compton`},
  gem:`Our Flag Means Death`},
 
-{id:'surname-jones', q:"Name a famous Black person with the last name Jones", like:"Quincy Jones", people:true, t:{
- b:`Quincy Jones; James Earl Jones; Grace Jones; Leslie Jones; Deacon Jones`,
- s:`Bill T. Jones; Elvin Jones`,
- l:`K.C. Jones|KC Jones; Sam Jones; Hank Jones; Thad Jones; Philly Joe Jones; Jo Jones; Booker T. Jones; Roy Jones Jr.; Marion Jones; Ed "Too Tall" Jones|Too Tall Jones; Julio Jones; Chandler Jones; Aaron Jones; Tyus Jones; Bobby Jones; Caldwell Jones; Eddie Jones; Lolo Jones; Rashida Jones; Orlando Jones; Tamala Jones; Mike Jones; Jim Jones; Sharon Jones; Etta Jones; Lil' Kim|Kimberly Jones|Lil Kim; Van Jones`,
- r:`Edward P. Jones; Gayl Jones; Amiri Baraka|LeRoi Jones; Absalom Jones; Frederick McKinley Jones; Elaine Jones; Nathaniel R. Jones; Clara Stanton Jones`},
- gem:`Claudia Jones`},
+{id:'song-rema', q:"Name a Rema song", like:"Calm Down", t:{
+ b:`Calm Down; Dumebi; Woman; Bounce`,
+ s:`Soundgasm; Charm`,
+ l:`Ginger Me; Beamer (Bad Boys)|Beamer; FYN; Ozeba; Azaman; Holiday; HEHEHE|Hehehe; Baby (Is It a Crime)|Baby Is It a Crime; Benin Boys`,
+ r:`Lady; Why; DND; Reason You; Spiderman`},
+ gem:`Iron Man`},
 
 {id:'from-newjersey', q:"Name a famous Black person from New Jersey", like:"Whitney Houston", people:true, t:{
  b:`Whitney Houston; Queen Latifah; Lauryn Hill; Paul Robeson; Shaquille O'Neal|Shaq`,
@@ -17863,7 +17862,53 @@ const DATA = [
  s:`Freeway of Love; Car Wash`,
  l:`Maybellene; No Particular Place to Go; Mercedes Boy; Pink Cadillac; Back Seat (of My Jeep)|Back Seat|Back Seat of My Jeep; Still Tippin'|Still Tippin; Swangin and Bangin|Swangin' and Bangin'; Route 66|(Get Your Kicks on) Route 66; Cadillac Car`,
  r:`You Can't Catch Me|You Cant Catch Me; Ridin' Spinners|Ridin Spinners`},
- gem:`Rocket 88|Rocket "88"`}
+ gem:`Rocket 88|Rocket "88"`},
+
+{id:'life-porch', q:"Name something you'd see on Grandma's front porch", like:"a rocking chair", t:{
+ b:`Rocking chair|rocking chairs|rocker; Porch swing|swing; Potted plants|plants|flowers|flower pots; Welcome mat|doormat; Grandma`,
+ s:`Screen door; Glider|metal glider|porch glider`,
+ l:`Ferns|hanging ferns|hanging plants|hanging baskets; Wind chimes; Fly swatter|flyswatter; Sweet tea|iced tea|lemonade; Church fan|hand fan|funeral home fan; Folding chairs|lawn chairs; Bowl of snap beans|snapping beans|shelling peas|beans; Porch light; Neighbors|neighbors stopping by; Mailbox; Bird feeder; Broom; Concrete lions|lion statues|statues; Radio; Citronella candle|bug spray; American flag|flag; House number|house numbers; Cooler; Dog|the dog; Bench`},
+ gem:`Haint blue ceiling|haint blue|blue porch ceiling|blue ceiling`},
+
+{id:'gen-stevie', q:"Name something tied to Stevie Wonder (not a song)", like:"Motown", t:{
+ b:`Motown|Motown Records; Harmonica; Sunglasses|shades; Blind|blindness; Piano|keyboards|keys`,
+ s:`Little Stevie Wonder; Songs in the Key of Life`,
+ l:`Saginaw|Saginaw, Michigan; Detroit; Berry Gordy; Innervisions; Talking Book; Fulfillingness' First Finale|Fulfillingness First Finale; Hotter than July; Martin Luther King Jr. Day|MLK Day|King holiday; Grammys|Grammy Awards; Album of the Year; Presidential Medal of Freedom|Medal of Freedom; Rock and Roll Hall of Fame|Rock & Roll Hall of Fame; Braids; Clavinet|synthesizer|synths; Michigan School for the Blind; The Woman in Red; Oscar|Academy Award`},
+ gem:`Steveland Hardaway Judkins|Steveland Judkins|Steveland Morris|Steveland`},
+
+{id:'media-sequels', q:"Name a sequel to a movie with a Black lead", like:"Coming 2 America", t:{
+ b:`Coming 2 America; Next Friday; Bad Boys II|Bad Boys 2; Barbershop 2: Back in Business|Barbershop 2; Creed II|Creed 2`,
+ s:`Friday After Next; Rush Hour 2`,
+ l:`Bad Boys for Life; Bad Boys: Ride or Die|Bad Boys Ride or Die; Rush Hour 3; Creed III|Creed 3; Black Panther: Wakanda Forever|Wakanda Forever; The Best Man Holiday|Best Man Holiday; Think Like a Man Too; Ride Along 2; House Party 2; House Party 3; Beverly Hills Cop II|Beverly Hills Cop 2; Beverly Hills Cop III|Beverly Hills Cop 3; Beverly Hills Cop: Axel F|Axel F; Another 48 Hrs.|Another 48 Hours; Nutty Professor II: The Klumps|Nutty Professor 2|The Klumps; Big Momma's House 2|Big Mommas House 2; Barbershop: The Next Cut; Men in Black II|Men in Black 2|MIB 2; Men in Black 3|MIB 3; Blade II|Blade 2; Blade: Trinity|Blade Trinity; Dr. Dolittle 2|Doctor Dolittle 2; Why Did I Get Married Too?|Why Did I Get Married Too; The Equalizer 2|Equalizer 2; The Equalizer 3|Equalizer 3; Sister Act 2: Back in the Habit|Sister Act 2; Space Jam: A New Legacy|Space Jam 2; Are We Done Yet?|Are We Done Yet; Madea's Family Reunion; Boo 2! A Madea Halloween|Boo 2; Lethal Weapon 2`,
+ r:`Shaft's Big Score!|Shafts Big Score; Shaft in Africa; Super Fly T.N.T.|Super Fly TNT; Candyman: Farewell to the Flesh; Undercover Brother 2; Big Mommas: Like Father, Like Son|Like Father Like Son`,
+ o:`Cleopatra Jones and the Casino of Gold`},
+ gem:`Scream Blacula Scream`},
+
+{id:'africa-east', q:"Name a country in East Africa", like:"Kenya", t:{
+ b:`Kenya; Ethiopia; Tanzania; Uganda; Rwanda`,
+ s:`Somalia; South Sudan`,
+ l:`Burundi; Eritrea; Djibouti; Madagascar; Mozambique; Malawi; Zambia; Zimbabwe; Sudan; Mauritius; Seychelles`},
+ gem:`Comoros|The Comoros|Union of the Comoros`},
+
+{id:'sport-bballhof', q:"Name a Black member of the Basketball Hall of Fame", like:"Michael Jordan", people:true, t:{
+ b:`Michael Jordan|MJ; Magic Johnson; Kobe Bryant|Kobe; Shaquille O'Neal|Shaq; Kareem Abdul-Jabbar|Kareem`,
+ s:`Bill Russell; Allen Iverson|AI`,
+ l:`Wilt Chamberlain|Wilt; Oscar Robertson|Big O; Elgin Baylor; Julius Erving|Dr. J; Isiah Thomas; Hakeem Olajuwon|Hakeem; Patrick Ewing; Charles Barkley; Karl Malone; David Robinson; Tim Duncan; Kevin Garnett|KG; Dwyane Wade|D-Wade; Moses Malone; Clyde Drexler; Dominique Wilkins|Nique; Paul Pierce; Ray Allen; Grant Hill; Gary Payton; Scottie Pippen; Dennis Rodman; Vince Carter; Chris Webber; Ben Wallace; Chris Bosh; Carmelo Anthony|Melo; Dwight Howard; Lisa Leslie; Sheryl Swoopes; Cheryl Miller; Dawn Staley; Tamika Catchings; Walt Frazier|Clyde Frazier; Earl Monroe|Earl the Pearl; Willis Reed; George Gervin|Iceman; Maya Moore; Sylvia Fowles`,
+ r:`Bob McAdoo; Dikembe Mutombo; Alonzo Mourning; Tim Hardaway; Chauncey Billups; Wes Unseld; Elvin Hayes; Nate Archibald|Tiny Archibald; James Worthy; Joe Dumars; Robert Parish; Dennis Johnson; John Thompson; Nolan Richardson; Earl Lloyd; Cynthia Cooper; Teresa Weatherspoon; Lynette Woodard`,
+ o:`Clarence Gaines|Big House Gaines; John McLendon; Chuck Cooper; Nat Clifton|Sweetwater Clifton; Marques Haynes; Meadowlark Lemon`},
+ gem:`Bob Douglas`},
+
+{id:'media-awardhosts', q:"Name a Black star who has hosted a big awards show (Oscars, Grammys, Emmys, BET Awards and more)", like:"Chris Rock", people:true, t:{
+ b:`Chris Rock; Whoopi Goldberg|Whoopi; Steve Harvey; Kevin Hart; Taraji P. Henson|Taraji`,
+ s:`Jamie Foxx; Queen Latifah`,
+ l:`LL Cool J; Trevor Noah; Alicia Keys; Mo'Nique|Monique; Cedric the Entertainer|Cedric; Anthony Anderson; Tracee Ellis Ross; Regina Hall; Wanda Sykes; Kenan Thompson; Richard Pryor; Diana Ross; Samuel L. Jackson; Chris Tucker; D.L. Hughley|DL Hughley; Amanda Seales; Michael Che; Ariana DeBose; Nicki Minaj`},
+ gem:`Sammy Davis Jr.|Sammy Davis Jr|Sammy Davis`},
+
+{id:'music-daysongs', q:"Name a song by a Black artist with a day of the week in the title", like:"Easy (Like Sunday Morning)", t:{
+ b:`Easy (Like Sunday Morning)|Easy|Easy Like Sunday Morning; Saturday Love; Another Saturday Night; Friday (Ice Cube)|Friday; Blue Monday`,
+ s:`Saturday (Oooh! Ooooh!)|Saturday|Saturday Oooh Ooooh; Sunday Candy`,
+ l:`A Sunday Kind of Love|Sunday Kind of Love; Stormy Monday|Call It Stormy Monday; Saturday Night at the Movies; Saturday Nite (Earth, Wind & Fire)|Saturday Nite; Gloomy Sunday; Tuesday (iLoveMakonnen)|Tuesday; Thursday (The Weeknd)|Thursday; Tuesday Heartbreak; Come Sunday; Sunday in Savannah; Wednesday Night Interlude; Black Friday (Kendrick Lamar)|Black Friday; Sunday Shining`},
+ gem:`Saturday Night Fish Fry`}
 ];
 
 </script>
