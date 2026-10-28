@@ -1,0 +1,17 @@
+{
+  "name": "Deep in the Hood",
+  "short_name": "Deep in Hood",
+  "description": "A daily Black culture game. 7 questions, 25 seconds each. Rarer answers walk you deeper into the hood.",
+  "start_url": "/?ref=homescreen",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#130F22",
+  "theme_color": "#130F22",
+  "categories": ["games", "entertainment", "education"],
+  "icons": [
+    {"src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any"},
+    {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any"},
+    {"src": "/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}
