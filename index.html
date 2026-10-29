@@ -971,14 +971,14 @@ const DATA = [
 {id:'media-tvdads', q:"Name a famous Black TV dad (the character)", like:"Uncle Phil", t:{
  b:`Uncle Phil|Philip Banks|Phil Banks; Carl Winslow; James Evans Sr.|James Evans; Michael Kyle; Dre Johnson|Andre Johnson`,
  s:`George Jefferson; Julius Rock|Julius`,
- l:`Fred Sanford; Bernie McCullough|Bernie Mac; Curtis Payne; Calvin Butler; Kenny Upshaw; Frank Mitchell; Ray Campbell; Victor Baxter; Darryl Hughley; Randall Pearson; Lucious Lyon; Oscar Proud; Cleveland Brown; Pops|Earl Johnson`,
+ l:`Fred Sanford; Bernie McCullough|Bernie Mac; Curtis Payne; Calvin Butler; Bennie Upshaw; Frank Mitchell; Ray Campbell; Victor Baxter; Darryl Hughley; Randall Pearson; Lucious Lyon; Oscar Proud; Cleveland Brown; Pops|Earl Johnson; Lester Jenkins; Floyd Henderson`,
  r:`Leroy Brown|Mr. Brown; Ghost|James St. Patrick; Ralph Angel Bordelon|Ralph Angel`},
  gem:`Robert Peterson`},
 
 {id:'sport-jaguars', q:"Name a Black Jacksonville Jaguars legend", like:"Fred Taylor", people:true, t:{
  b:`Fred Taylor; Maurice Jones-Drew|MJD; Jimmy Smith; Jalen Ramsey; Keenan McCardell`,
  s:`Leonard Fournette; David Garrard`,
- l:`Josh Allen; Travon Walker; Calais Campbell; Yannick Ngakoue; Myles Jack; Telvin Smith; Marcedes Lewis; Rashean Mathis; Daryl Smith; John Henderson; Marcus Stroud; Kevin Hardy; Aaron Beasley; Donovin Darius; Fernando Bryant; Allen Robinson; Brian Thomas Jr.; Travis Etienne`},
+ l:`Josh Hines-Allen|Josh Allen; Travon Walker; Calais Campbell; Yannick Ngakoue; Myles Jack; Telvin Smith; Marcedes Lewis; Rashean Mathis; Daryl Smith; John Henderson; Marcus Stroud; Kevin Hardy; Aaron Beasley; Donovin Darius; Fernando Bryant; Allen Robinson; Brian Thomas Jr.; Travis Etienne`},
  gem:`Tony Brackens`},
 
 {id:'hbcu', q:"Name an HBCU", like:"Howard", t:{
@@ -1005,15 +1005,15 @@ const DATA = [
 {id:'media-animatedshows', q:"Name an animated show with a Black lead character", like:"The Proud Family", t:{
  b:`The Proud Family|Proud Family; The Boondocks|Boondocks; Static Shock; Doc McStuffins; The Cleveland Show|Cleveland Show`,
  s:`The PJs|PJs; Craig of the Creek`,
- l:`Karma's World|Karmas World; Black Dynamite; Moon Girl and Devil Dinosaur; Motown Magic; Super Sema; Iyanu; Ada Twist, Scientist|Ada Twist Scientist; Bino and Fino; Central Park; The Jackson 5ive|Jackson 5ive; Harlem Globetrotters; Young Love`},
+ l:`Karma's World|Karmas World; Black Dynamite; Moon Girl and Devil Dinosaur; Motown Magic; Super Sema; Iyanu; Ada Twist, Scientist|Ada Twist Scientist; Bino and Fino; Central Park; The Jackson 5ive|Jackson 5ive; Harlem Globetrotters; Young Love; Kid 'n Play|Kid n Play; Waynehead`},
  gem:`Hey Monie!|Hey Monie`},
 
 {id:'media-wbcw', q:"Name a show on The WB or The CW with a Black lead", like:"The Wayans Bros.", t:{
  b:`The Wayans Bros.|Wayans Bros|The Wayans Brothers|Wayans Brothers; The Jamie Foxx Show|Jamie Foxx Show; The Steve Harvey Show|Steve Harvey Show; Everybody Hates Chris; Girlfriends`,
  s:`The Game|Game; Sister, Sister|Sister Sister`,
  l:`Smart Guy; The Parent 'Hood|Parent Hood; For Your Love; All of Us; Black Lightning; All American; Batwoman; Naomi; All American: Homecoming|All American Homecoming`,
- r:`All About the Andersons; Cleghorne!|Cleghorne; Tom Swift; Charmed`},
- gem:`The PJs|PJs`},
+ r:`All About the Andersons; The PJs|PJs; Tom Swift; Charmed`},
+ gem:`Cleghorne!|Cleghorne`},
 
 {id:'named-mary', q:"Name a famous Black person named Mary", like:"Mary J. Blige", people:true, t:{
  b:`Mary J. Blige|Mary J Blige; Mary McLeod Bethune; Mary Jackson; Mary Wells`,
@@ -1029,12 +1029,11 @@ const DATA = [
  r:`Brad Daugherty; Bingo Smith|Bobby Smith; Jim Chones`},
  gem:`Austin Carr|Mr. Cavalier`},
 
-{id:'gen-jamesbrown', q:"Name something tied to James Brown (not a song)", like:"the Godfather of Soul", t:{
- b:`Godfather of Soul|The Godfather of Soul; The cape|Cape routine|Cape; Live at the Apollo|Apollo; The splits|Splits`,
- s:`Hardest Working Man in Show Business|Hardest working man in show business; Augusta|Augusta Georgia`,
- l:`Mr. Dynamite|Mister Dynamite; Soul Brother No. 1|Soul Brother Number One; The Famous Flames|Famous Flames; The J.B.'s|JBs|The JBs; Bobby Byrd; Maceo Parker; Bootsy Collins|Bootsy; Fred Wesley; Clyde Stubblefield; Get On Up|Get On Up movie|Chadwick Boseman; The Blues Brothers|Blues Brothers; Rocky IV; Boston Garden concert|Boston Garden|1968 Boston concert; King Records; Syd Nathan; Most sampled|Sampling; Pompadour; Rock and Roll Hall of Fame|Rock Hall; Kennedy Center Honors`,
- r:`Toccoa|Toccoa Georgia; Barnwell|Barnwell South Carolina; The T.A.M.I. Show|TAMI Show; Mr. Please Please Please`},
- gem:`Danny Ray`},
+{id:'life-boardgames', q:"Name a board or table game in a Black household", like:"Monopoly", t:{
+ b:`Monopoly; Connect Four|Connect 4; Checkers; Sorry!|Sorry; Uno`,
+ s:`Scrabble; Trouble`,
+ l:`Chess; Candy Land; Chutes and Ladders; Operation; Jenga; Taboo; Pictionary; The Game of Life|Life; Clue; Battleship; Hungry Hungry Hippos; Guess Who?|Guess Who; Twister; Trivial Pursuit; Catch Phrase|Catchphrase; Aggravation; Parcheesi; Backgammon; Yahtzee; Black Card Revoked; Dominoes; Spades; Phase 10`},
+ gem:`Mancala|Oware|Ayo`},
 
 {id:'life-beautysupply', q:"Name something you'd buy at the beauty supply store", like:"braiding hair", t:{
  b:`Braiding hair|Kanekalon|X-pression|expression hair|pre-stretched braiding hair; Edge control; Bonnet|satin bonnet; Wig|wigs|lace front|lace front wig; Durag|du-rag|do-rag`,
@@ -1042,26 +1041,24 @@ const DATA = [
  l:`Lace glue|wig glue|Bold Hold; Wig cap; Crochet hair; Closure|lace closure|frontal; Gel; Hair grease|grease; Combs|rattail comb; Brushes|boar bristle brush; Rollers; Perm rods; Relaxer; Hair dye|hair color; Shampoo; Conditioner|deep conditioner; Leave-in conditioner|leave in; Bobby pins; Ponytail holders|hair ties; Satin scarf|scarf; Nail polish; Press-on nails|press ons|acrylic nails; Shea butter; Cocoa butter; African black soap|black soap; Jamaican black castor oil|castor oil; Wave cap; Clippers; Flat iron; Hot comb; Mousse|setting lotion; Spritz|holding spray; Eyebrow pencil; Lip gloss; Body oil|oils; Earrings|bamboo earrings|jewelry; Twist sponge|curl sponge; Drawstring ponytail|clip-in ponytail|ponytail; Edge brush; Spray bottle`},
  gem:`Wig head|mannequin head|wig stand`},
 
-{id:'rap-uk', q:"Name a rapper from the UK", like:"Stormzy", t:{
- b:`Stormzy; Dave|Santan Dave; Skepta; Dizzee Rascal|Dizzee`,
- s:`Little Simz|Simz; Kano`,
- l:`Wiley; Giggs; Ms. Dynamite|Ms Dynamite; Central Cee; J Hus; Headie One; Krept & Konan|Krept and Konan; Tinie Tempah|Tinie; Chip|Chipmunk; AJ Tracey; Ghetts; JME; Wretch 32; Lethal Bizzle; Loyle Carner; Stefflon Don; Aitch`,
- r:`Lady Leshurr; Kojey Radical; Big Narstie; Novelist; Roots Manuva; Estelle; Slick Rick; MF DOOM|DOOM`},
- gem:`Monie Love`},
+{id:'music-girlgroups', q:"Name a Black girl group", like:"Destiny's Child", t:{
+ b:`Destiny's Child|Destinys Child; TLC; En Vogue; SWV|Sisters With Voices; The Supremes|Supremes`,
+ s:`Xscape; The Pointer Sisters|Pointer Sisters`,
+ l:`Total; The Marvelettes|Marvelettes; Martha and the Vandellas|Martha Reeves and the Vandellas|The Vandellas; The Ronettes|Ronettes; The Shirelles|Shirelles; The Chiffons; The Crystals; The Chantels; Labelle; The Emotions; Sister Sledge; The Three Degrees; Salt-N-Pepa|Salt N Pepa; 702; Brownstone; Allure; 3LW; Blaque; Cherish; Zhané|Zhane; Jade; Mary Mary; The Clark Sisters|Clark Sisters; Chloe x Halle|Chloe and Halle; City Girls; Klymaxx; Mary Jane Girls; Changing Faces`,
+ r:`The Velvelettes; The Sweet Inspirations; The Jones Girls; Vanity 6; Danity Kane; Mis-Teeq; OMG Girlz; The Dixie Cups`},
+ gem:`Honey Cone`},
 
-{id:'gen-biles', q:"Name something tied to Simone Biles", like:"the Olympics", t:{
- b:`Olympics|Olympic gold; Gymnastics; The GOAT|GOAT|Goat leotard; Houston|Spring, Texas|Texas`,
- s:`Yurchenko double pike; The Biles|Skills named after her|The Biles II`,
- l:`Rio 2016|Rio; Tokyo 2020|Tokyo; Paris 2024|Paris; Final Five; Jonathan Owens|Owens; World Championships|Worlds; Floor exercise|Floor; Vault; Balance beam|Beam; Uneven bars; Mental health|Mental health advocacy; Simone Biles Rising; Cecile Landi|Laurent Landi|The Landis; Aimee Boorman; World Champions Centre; Ron and Nellie Biles|Grandparents; Dancing with the Stars; Presidential Medal of Freedom; Jordan Chiles; Suni Lee; Gabby Douglas; Aly Raisman; Laurie Hernandez; Most decorated gymnast|Most medals`,
- r:`The twisties|Twisties`},
- gem:`Courage to Soar`},
+{id:'life-cookietin', q:"Name something you'd find in Grandma's blue cookie tin (that isn't cookies)", like:"sewing supplies", t:{
+ b:`Sewing supplies|sewing kit; Needles; Thread|spools of thread; Buttons; Scissors`,
+ s:`Safety pins; Thimble`,
+ l:`Tape measure|measuring tape; Straight pins|pins; Pincushion; Bobbins; Seam ripper; Zippers; Patches; Elastic; Yarn; Crochet hook; Hooks and eyes; Snaps; Velcro; Knitting needles; Ribbon; Lace; Old photos|photographs; Money|cash; Receipts; Rubber bands; Coupons`},
+ gem:`Needle threader`},
 
-{id:'stars-lancereddick', q:"Name a movie or show starring Lance Reddick", like:"The Wire", t:{
- b:`The Wire|Wire; John Wick; Fringe; Bosch`,
- s:`Oz; Resident Evil`,
- l:`Lost; Godzilla vs. Kong|Godzilla vs Kong; Angel Has Fallen; John Wick: Chapter 4|John Wick 4; John Wick: Chapter 2|John Wick 2; John Wick: Chapter 3 – Parabellum|John Wick 3|Parabellum; Ballerina; White House Down; One Night in Miami...|One Night in Miami; Sylvie's Love|Sylvies Love; White Men Can't Jump|White Men Cant Jump; Godzilla; Great Expectations; The Siege|Siege; Don't Say a Word|Dont Say a Word; Jonah Hex; Oldboy; The Guest|Guest; Won't Back Down|Wont Back Down; Little Woods; Shirley; The Caine Mutiny Court-Martial; Bosch: Legacy|Bosch Legacy; The Corner|Corner; Castlevania; Rick and Morty; Invincible; The Legend of Vox Machina|Legend of Vox Machina; DuckTales; Young Sheldon; American Horror Story: Coven|Coven; American Horror Story: Apocalypse|Apocalypse; The Blacklist|Blacklist; Key & Peele|Key and Peele; Castle; It's Always Sunny in Philadelphia|Its Always Sunny in Philadelphia; Intelligence; The West Wing|West Wing; The Nanny|Nanny; New York Undercover; CSI: Miami|CSI Miami; Numb3rs|Numbers; Law & Order|Law and Order; Law & Order: Special Victims Unit|Law and Order SVU|SVU; Law & Order: Criminal Intent; The Avengers: Earth's Mightiest Heroes; Tron: Uprising|Tron Uprising; Beware the Batman; Kite Man: Hell Yeah!|Kite Man Hell Yeah; Paradise PD`,
- r:`Percy Jackson and the Olympians; I Dreamed of Africa; Brother to Brother; Dirty Work; Tennessee; The Way of War; Remains; St. Sebastian; Faults; Search Party; Parallel Man: Infinite Pursuit; Fun Size Horror; Canal Street; Monster Party; The Domestics; Faith Based; Swift Justice; What the Deaf Man Heard; The Fixer; Keep the Faith, Baby; Independent Lens; Svetlana; Wilfred; NTSF:SD:SUV::; Comedy Bang! Bang!; Tim & Eric's Bedtime Stories; Through the Eye of the Needle; Farzar`},
- gem:`Corporate`},
+{id:'media-sportsmovies', q:"Name a sports movie with a Black lead", like:"Remember the Titans", t:{
+ b:`Remember the Titans; Coach Carter; Love & Basketball|Love and Basketball; Creed; White Men Can't Jump|White Men Cant Jump`,
+ s:`He Got Game; Above the Rim`,
+ l:`Ali; The Hurricane|Hurricane; 42; King Richard; The Express|Express; Pride; Like Mike; Hoop Dreams; The Great White Hope|Great White Hope; Uncle Drew; Juwanna Mann; The Sixth Man|Sixth Man; Space Jam; Eddie; The Fish That Saved Pittsburgh; The Bingo Long Traveling All-Stars & Motor Kings|Bingo Long; Soul of the Game; Race; Concussion; Brian's Song|Brians Song; The Jackie Robinson Story|Jackie Robinson Story; Gridiron Gang; Woodlawn; Creed II|Creed 2; Creed III|Creed 3; Rebound; Brian Banks; Shooting Stars; Space Jam: A New Legacy|Space Jam 2`},
+ gem:`Cornbread, Earl and Me|Cornbread Earl and Me`},
 
 {id:'named-bernard', q:"Name a famous Black person named Bernard (or Bernie)", like:"Bernie Mac", people:true, t:{
  b:`Bernie Mac; Bernard King; Bernard Hopkins; Bernard Shaw`,
@@ -1632,12 +1629,11 @@ const DATA = [
  r:`Jo Ann Robinson; Amelia Boynton Robinson; Ruby Doris Smith Robinson; Spottswood Robinson III|Spottswood Robinson; Hilyard Robinson; Cleo Parker Robinson`},
  gem:`Sylvia Robinson`},
 
-{id:'books-jerrypinkney', q:"Name a book illustrated by Jerry Pinkney", like:"The Lion & the Mouse", t:{
- b:`The Lion & the Mouse|The Lion and the Mouse; John Henry; The Talking Eggs; Mirandy and Brother Wind`,
- s:`The Patchwork Quilt; Goin' Someplace Special|Goin Someplace Special`,
- l:`The Tortoise & the Hare|The Tortoise and the Hare; Aesop's Fables|Aesops Fables; The Ugly Duckling; Noah's Ark|Noahs Ark; Little Red Riding Hood; The Grasshopper & the Ants|The Grasshopper and the Ants; Three Little Kittens; Rikki-Tikki-Tavi|Rikki Tikki Tavi; Black Cowboy, Wild Horses|Black Cowboy Wild Horses; The Old African; Sam and the Tigers; The Nightingale`,
- r:`The Little Mermaid; The Little Red Hen; The Moon Over Star; Home Place; Twinkle, Twinkle, Little Star; The Three Billy Goats Gruff; Puss in Boots`},
- gem:`Minty|Minty: A Story of Young Harriet Tubman`},
+{id:'gen-superheroactors', q:"Name a Black male actor who played a superhero", like:"Chadwick Boseman", people:true, t:{
+ b:`Chadwick Boseman; Anthony Mackie; Wesley Snipes; Will Smith`,
+ s:`Don Cheadle; Michael B. Jordan`,
+ l:`Robert Townsend; Damon Wayans; Shaquille O'Neal|Shaq; Mike Colter; Cress Williams; Ray Fisher; Aldis Hodge; Brian Tyree Henry; Dwayne Johnson|The Rock; Yahya Abdul-Mateen II|Yahya Abdul-Mateen; Shameik Moore; Phil LaMarr; Kel Mitchell`},
+ gem:`Michael Jai White`},
 
 {id:'from-dallas', q:"Name a famous Black person from Dallas", like:"Erykah Badu", people:true, t:{
  b:`Erykah Badu; Usher; Larry Johnson; Chris Bosh`,
@@ -1654,25 +1650,24 @@ const DATA = [
  o:`Myintrotoletuknow; Tomb of the Boom; Movin' Cool (The After Party)|Movin Cool; Kim & Cookie|Kim and Cookie; Chronomentrophobia; Hold On, Be Strong|Hold On Be Strong`},
  gem:`Benz or Beamer`},
 
-{id:'books-eleanortaylorbland', q:"Name a book by Eleanor Taylor Bland", like:"Dead Time", t:{
- b:`Dead Time; Slow Burn; Gone Quiet; Done Wrong`,
- s:`Keep Still; See No Evil`,
- l:`Tell No Tales; Scream in Silence; Whispers in the Dark; Fatal Remains; A Cold and Silent Dying; A Dark and Deadly Deception; Suddenly a Stranger`},
- gem:`Windy City Dying`},
+{id:'gen-hbcugrads', q:"Name a famous person who went to an HBCU (not an athlete)", like:"Oprah Winfrey", people:true, t:{
+ b:`Oprah Winfrey|Oprah; Kamala Harris; Spike Lee; Martin Luther King Jr.|MLK|Martin Luther King; Taraji P. Henson|Taraji`,
+ s:`Chadwick Boseman; Samuel L. Jackson|Sam Jackson`,
+ l:`Lionel Richie; Common; Toni Morrison; Thurgood Marshall; Langston Hughes; Phylicia Rashad; Debbie Allen; Anthony Anderson; Stacey Abrams; Raphael Warnock; Keenen Ivory Wayans; Tom Joyner; Ta-Nehisi Coates; Zora Neale Hurston; Jesse Jackson; Megan Thee Stallion|Megan; Erykah Badu; Booker T. Washington; W.E.B. Du Bois|WEB Du Bois|Du Bois`,
+ r:`Marian Wright Edelman; Ralph Abernathy; Ed Bradley; Ida B. Wells`},
+ gem:`Katherine Johnson`},
 
-{id:'books-sterlingbrown', q:"Name a poem or book by Sterling A. Brown", like:"Southern Road", t:{
- b:`Southern Road; Strong Men; Ma Rainey; Slim Greer`,
- s:`The Negro Caravan; Sister Lou`,
- l:`The Negro in American Fiction; Negro Poetry and Drama; The Collected Poems of Sterling A. Brown|The Collected Poems; Odyssey of Big Boy; Old Lem; Long Gone; Memphis Blues; Remembering Nat Turner; Southern Cop`,
- r:`Children's Children; When de Saints Go Ma'ching Home; Sporting Beasley; Cabaret; Slim in Atlanta; Slim in Hell`},
- gem:`The Last Ride of Wild Bill`},
+{id:'life-hotsaucefoods', q:"Name a food you put hot sauce on", like:"fried chicken", t:{
+ b:`Fried chicken|chicken; Wings|chicken wings|hot wings; Eggs|scrambled eggs; Grits; Fried fish|fish|catfish|whiting`,
+ s:`Collard greens|greens|turnip greens|mustard greens; French fries|fries`,
+ l:`Pizza; Potato chips|chips; Popcorn; Ramen noodles|ramen|noodles; Chicken noodle soup|soup; Mac and cheese|macaroni and cheese; Hot dogs; Burgers|hamburgers; Tacos; Shrimp|fried shrimp; Oysters; Gumbo; Red beans and rice; Black-eyed peas; Cabbage; Pork rinds|cracklins; Chitlins|chitterlings; Turkey necks; Fried pickles; Sardines; Breakfast sandwich|bacon egg and cheese; Rice`},
+ gem:`Po' boy|po boy|po' boys|po boys`},
 
-{id:'africa-markets', q:"Name a famous African market", like:"Balogun Market", t:{
- b:`Balogun Market|Balogun; Makola Market|Makola; Kejetia Market|Kejetia|Kumasi Central Market`,
- s:`Djemaa el-Fna|Jemaa el-Fnaa; Onitsha Main Market|Onitsha Market`,
- l:`Ariaria Market|Ariaria; Khan el-Khalili; Sandaga Market|Sandaga; Kariakoo Market|Kariakoo; Owino Market|St. Balikuddembe Market; Dantokpa Market|Dantokpa; Kurmi Market|Kurmi; Darajani Market|Darajani; Grand Marché (Lomé)|Grand Marche; Marché Kermel|Kermel; Computer Village (Ikeja)|Computer Village`,
- r:`Kantamanto Market|Kantamanto; Oshodi Market|Oshodi; Wuse Market|Wuse; Bakara Market|Bakara; Gikomba Market|Gikomba`},
- gem:`Merkato (Addis Ababa)|Merkato|Mercato`},
+{id:'music-babysongs', q:"Name a song by a Black artist with \"Baby\" in the title", like:"Baby Love", t:{
+ b:`Baby Love; Baby Boy; Baby Got Back; Ooo Baby Baby|Ooh Baby Baby`,
+ s:`Baby I Need Your Loving; Baby-Baby-Baby|Baby Baby Baby`,
+ l:`Baby, Come to Me|Baby Come to Me; Baby Workout; Baby It's You|Baby Its You; Baby I'm Yours|Baby Im Yours; Baby, I Love You|Baby I Love You; Baby Be Mine; Baby Can I Hold You; Baby; Baby Hold On to Me; My Baby Just Cares for Me; Baby Don't Cry (Keep Ya Head Up II)|Baby Dont Cry; Baby I'm a Star|Baby Im a Star; Baby (You've Got What It Takes)|Baby You've Got What It Takes|Baby Youve Got What It Takes; Baby Don't You Do It|Baby Dont You Do It`},
+ gem:`Baby, I'm for Real|Baby Im for Real|Baby I'm for Real`},
 
 {id:'media-90stv', q:"Name a 1990s TV show with a Black lead or star", like:"Martin", t:{
  b:`Martin; Living Single; The Fresh Prince of Bel-Air|Fresh Prince; Family Matters; Moesha; Sister, Sister|Sister Sister`,
@@ -5012,12 +5007,12 @@ const DATA = [
  r:`There It Is; Tribute to a Woman; Love You More; When We Make Love; Last Chance; Holler; Just Because; The Best Man I Can Be`},
  gem:`Tell Me Do U Wanna|Tell Me Do You Wanna`},
 
-{id:'music-girlgroups', q:"Name a Black girl group", like:"Destiny's Child", t:{
- b:`Destiny's Child|Destinys Child; TLC; En Vogue; SWV|Sisters With Voices; The Supremes|Supremes`,
- s:`Xscape; The Pointer Sisters|Pointer Sisters`,
- l:`Total; The Marvelettes|Marvelettes; Martha and the Vandellas|Martha Reeves and the Vandellas|The Vandellas; The Ronettes|Ronettes; The Shirelles|Shirelles; The Chiffons; The Crystals; The Chantels; Labelle; The Emotions; Sister Sledge; The Three Degrees; Salt-N-Pepa|Salt N Pepa; 702; Brownstone; Allure; 3LW; Blaque; Cherish; Zhané|Zhane; Jade; Mary Mary; The Clark Sisters|Clark Sisters; Chloe x Halle|Chloe and Halle; City Girls; Klymaxx; Mary Jane Girls; Changing Faces`,
- r:`The Velvelettes; The Sweet Inspirations; The Jones Girls; Vanity 6; Danity Kane; Mis-Teeq; OMG Girlz; The Dixie Cups`},
- gem:`Honey Cone`},
+{id:'rap-uk', q:"Name a rapper from the UK", like:"Stormzy", t:{
+ b:`Stormzy; Dave|Santan Dave; Skepta; Dizzee Rascal|Dizzee`,
+ s:`Little Simz|Simz; Kano`,
+ l:`Wiley; Giggs; Ms. Dynamite|Ms Dynamite; Central Cee; J Hus; Headie One; Krept & Konan|Krept and Konan; Tinie Tempah|Tinie; Chip|Chipmunk; AJ Tracey; Ghetts; JME; Wretch 32; Lethal Bizzle; Loyle Carner; Stefflon Don; Aitch`,
+ r:`Lady Leshurr; Kojey Radical; Big Narstie; Novelist; Roots Manuva; Estelle; Slick Rick; MF DOOM|DOOM`},
+ gem:`Monie Love`},
 
 {id:'africa-flags', q:"Name an African or Caribbean country whose flag uses red, gold and green", like:"Ghana", t:{
  b:`Ghana; Ethiopia; Senegal; Cameroon; Guinea`,
@@ -5053,11 +5048,12 @@ const DATA = [
  r:`Anita Bush; John O'Neal; Gilbert Moses; Ron Himes; Ekundayo Bandele; Abena Joan Brown; Nick Stewart`},
  gem:`William Alexander Brown|William Brown`},
 
-{id:'media-sportsmovies', q:"Name a sports movie with a Black lead", like:"Remember the Titans", t:{
- b:`Remember the Titans; Coach Carter; Love & Basketball|Love and Basketball; Creed; White Men Can't Jump|White Men Cant Jump`,
- s:`He Got Game; Above the Rim`,
- l:`Ali; The Hurricane|Hurricane; 42; King Richard; The Express|Express; Pride; Like Mike; Hoop Dreams; The Great White Hope|Great White Hope; Uncle Drew; Juwanna Mann; The Sixth Man|Sixth Man; Space Jam; Eddie; The Fish That Saved Pittsburgh; The Bingo Long Traveling All-Stars & Motor Kings|Bingo Long; Soul of the Game; Race; Concussion; Brian's Song|Brians Song; The Jackie Robinson Story|Jackie Robinson Story; Gridiron Gang; Woodlawn; Creed II|Creed 2; Creed III|Creed 3; Rebound; Brian Banks; Shooting Stars; Space Jam: A New Legacy|Space Jam 2`},
- gem:`Cornbread, Earl and Me|Cornbread Earl and Me`},
+{id:'stars-lancereddick', q:"Name a movie or show starring Lance Reddick", like:"The Wire", t:{
+ b:`The Wire|Wire; John Wick; Fringe; Bosch`,
+ s:`Oz; Resident Evil`,
+ l:`Lost; Godzilla vs. Kong|Godzilla vs Kong; Angel Has Fallen; John Wick: Chapter 4|John Wick 4; John Wick: Chapter 2|John Wick 2; John Wick: Chapter 3 – Parabellum|John Wick 3|Parabellum; Ballerina; White House Down; One Night in Miami...|One Night in Miami; Sylvie's Love|Sylvies Love; White Men Can't Jump|White Men Cant Jump; Godzilla; Great Expectations; The Siege|Siege; Don't Say a Word|Dont Say a Word; Jonah Hex; Oldboy; The Guest|Guest; Won't Back Down|Wont Back Down; Little Woods; Shirley; The Caine Mutiny Court-Martial; Bosch: Legacy|Bosch Legacy; The Corner|Corner; Castlevania; Rick and Morty; Invincible; The Legend of Vox Machina|Legend of Vox Machina; DuckTales; Young Sheldon; American Horror Story: Coven|Coven; American Horror Story: Apocalypse|Apocalypse; The Blacklist|Blacklist; Key & Peele|Key and Peele; Castle; It's Always Sunny in Philadelphia|Its Always Sunny in Philadelphia; Intelligence; The West Wing|West Wing; The Nanny|Nanny; New York Undercover; CSI: Miami|CSI Miami; Numb3rs|Numbers; Law & Order|Law and Order; Law & Order: Special Victims Unit|Law and Order SVU|SVU; Law & Order: Criminal Intent; The Avengers: Earth's Mightiest Heroes; Tron: Uprising|Tron Uprising; Beware the Batman; Kite Man: Hell Yeah!|Kite Man Hell Yeah; Paradise PD`,
+ r:`Percy Jackson and the Olympians; I Dreamed of Africa; Brother to Brother; Dirty Work; Tennessee; The Way of War; Remains; St. Sebastian; Faults; Search Party; Parallel Man: Infinite Pursuit; Fun Size Horror; Canal Street; Monster Party; The Domestics; Faith Based; Swift Justice; What the Deaf Man Heard; The Fixer; Keep the Faith, Baby; Independent Lens; Svetlana; Wilfred; NTSF:SD:SUV::; Comedy Bang! Bang!; Tim & Eric's Bedtime Stories; Through the Eye of the Needle; Farzar`},
+ gem:`Corporate`},
 
 {id:'song-peterock', q:"Name a Pete Rock & CL Smooth song", like:"They Reminisce Over You (T.R.O.Y.)", t:{
  b:`They Reminisce Over You (T.R.O.Y.)|They Reminisce Over You|T.R.O.Y.|TROY; Straighten It Out; Lots of Lovin'|Lots of Loving`,
@@ -5668,11 +5664,11 @@ const DATA = [
  l:`Jim Jackson; Josh Howard; Sam Perkins; Tyson Chandler; Shawn Marion; Caron Butler; Monta Ellis; Rajon Rondo; Dennis Smith Jr.; Harrison Barnes; Jalen Brunson; Spencer Dinwiddie; Dereck Lively II; P.J. Washington|PJ Washington; Daniel Gafford; Klay Thompson; Anthony Davis; Antawn Jamison; Jerry Stackhouse; Devin Harris; Erick Dampier; Popeye Jones`},
  gem:`Rolando Blackman`},
 
-{id:'life-boardgames', q:"Name a board or table game in a Black household", like:"Monopoly", t:{
- b:`Monopoly; Connect Four|Connect 4; Checkers; Sorry!|Sorry; Uno`,
- s:`Scrabble; Trouble`,
- l:`Chess; Candy Land; Chutes and Ladders; Operation; Jenga; Taboo; Pictionary; The Game of Life|Life; Clue; Battleship; Hungry Hungry Hippos; Guess Who?|Guess Who; Twister; Trivial Pursuit; Catch Phrase|Catchphrase; Aggravation; Parcheesi; Backgammon; Yahtzee; Black Card Revoked; Dominoes; Spades; Phase 10`},
- gem:`Mancala|Oware|Ayo`},
+{id:'media-2010stv', q:"Name a 2010s TV show with a Black lead or star", like:"Insecure", t:{
+ b:`Insecure; Black-ish|Blackish; Empire; Scandal; Power; How to Get Away with Murder|HTGAWM`,
+ s:`Atlanta; Queen Sugar`,
+ l:`Being Mary Jane; Greenleaf; The Chi; Snowfall; Dear White People; Luke Cage; Black Lightning; Let's Stay Together; Real Husbands of Hollywood; Single Ladies; The Haves and the Have Nots; Sistas; The Oval; Survivor's Remorse; Ballers; Underground; This Is Us; Key & Peele|Key and Peele; Grown-ish; Mixed-ish; She's Gotta Have It; Pose; When They See Us; A Black Lady Sketch Show; Rel; The Last O.G.|The Last OG; All American; Star; Raising Dion; Family Reunion; Bob Hearts Abishola; The Neighborhood; Watchmen; Black Jesus; Love Is___|Love Is; In Contempt; Hit the Floor; The Soul Man; Reed Between the Lines; The Quad; Rosewood; Saints & Sinners`},
+ gem:`The Carmichael Show`},
 
 {id:'stars-jurnee', q:"Name a movie or show starring Jurnee Smollett", like:"Eve's Bayou", t:{
  b:`Eve's Bayou|Eves Bayou; Lovecraft Country; Underground; Full House`,
@@ -5784,11 +5780,12 @@ const DATA = [
  r:`Could I Be Dreaming; American Music; Baby Come and Get It; I Need You; Wang Dang Doodle`},
  gem:`Fairytale`},
 
-{id:'life-cookietin', q:"Name something you'd find in Grandma's blue cookie tin (that isn't cookies)", like:"sewing supplies", t:{
- b:`Sewing supplies|sewing kit; Needles; Thread|spools of thread; Buttons; Scissors`,
- s:`Safety pins; Thimble`,
- l:`Tape measure|measuring tape; Straight pins|pins; Pincushion; Bobbins; Seam ripper; Zippers; Patches; Elastic; Yarn; Crochet hook; Hooks and eyes; Snaps; Velcro; Knitting needles; Ribbon; Lace; Old photos|photographs; Money|cash; Receipts; Rubber bands; Coupons`},
- gem:`Needle threader`},
+{id:'gen-biles', q:"Name something tied to Simone Biles", like:"the Olympics", t:{
+ b:`Olympics|Olympic gold; Gymnastics; The GOAT|GOAT|Goat leotard; Houston|Spring, Texas|Texas`,
+ s:`Yurchenko double pike; The Biles|Skills named after her|The Biles II`,
+ l:`Rio 2016|Rio; Tokyo 2020|Tokyo; Paris 2024|Paris; Final Five; Jonathan Owens|Owens; World Championships|Worlds; Floor exercise|Floor; Vault; Balance beam|Beam; Uneven bars; Mental health|Mental health advocacy; Simone Biles Rising; Cecile Landi|Laurent Landi|The Landis; Aimee Boorman; World Champions Centre; Ron and Nellie Biles|Grandparents; Dancing with the Stars; Presidential Medal of Freedom; Jordan Chiles; Suni Lee; Gabby Douglas; Aly Raisman; Laurie Hernandez; Most decorated gymnast|Most medals`,
+ r:`The twisties|Twisties`},
+ gem:`Courage to Soar`},
 
 {id:'people-youth', q:"Name a Black kid or teen who made history", like:"Ruby Bridges", people:true, t:{
  b:`Ruby Bridges; Claudette Colvin; Barbara Johns; Amanda Gorman`,
@@ -5929,11 +5926,12 @@ const DATA = [
  r:`Juma Ikangaa; Shaaban Robert; Ali Hassan Mwinyi; Benjamin Mkapa; Alphonce Simbu`},
  gem:`Filbert Bayi`},
 
-{id:'media-2010stv', q:"Name a 2010s TV show with a Black lead or star", like:"Insecure", t:{
- b:`Insecure; Black-ish|Blackish; Empire; Scandal; Power; How to Get Away with Murder|HTGAWM`,
- s:`Atlanta; Queen Sugar`,
- l:`Being Mary Jane; Greenleaf; The Chi; Snowfall; Dear White People; Luke Cage; Black Lightning; Let's Stay Together; Real Husbands of Hollywood; Single Ladies; The Haves and the Have Nots; Sistas; The Oval; Survivor's Remorse; Ballers; Underground; This Is Us; Key & Peele|Key and Peele; Grown-ish; Mixed-ish; She's Gotta Have It; Pose; When They See Us; A Black Lady Sketch Show; Rel; The Last O.G.|The Last OG; All American; Star; Raising Dion; Family Reunion; Bob Hearts Abishola; The Neighborhood; Watchmen; Black Jesus; Love Is___|Love Is; In Contempt; Hit the Floor; The Soul Man; Reed Between the Lines; The Quad; Rosewood; Saints & Sinners`},
- gem:`The Carmichael Show`},
+{id:'gen-jamesbrown', q:"Name something tied to James Brown (not a song)", like:"the Godfather of Soul", t:{
+ b:`Godfather of Soul|The Godfather of Soul; The cape|Cape routine|Cape; Live at the Apollo|Apollo; The splits|Splits`,
+ s:`Hardest Working Man in Show Business|Hardest working man in show business; Augusta|Augusta Georgia`,
+ l:`Mr. Dynamite|Mister Dynamite; Soul Brother No. 1|Soul Brother Number One; The Famous Flames|Famous Flames; The J.B.'s|JBs|The JBs; Bobby Byrd; Maceo Parker; Bootsy Collins|Bootsy; Fred Wesley; Clyde Stubblefield; Get On Up|Get On Up movie|Chadwick Boseman; The Blues Brothers|Blues Brothers; Rocky IV; Boston Garden concert|Boston Garden|1968 Boston concert; King Records; Syd Nathan; Most sampled|Sampling; Pompadour; Rock and Roll Hall of Fame|Rock Hall; Kennedy Center Honors`,
+ r:`Toccoa|Toccoa Georgia; Barnwell|Barnwell South Carolina; The T.A.M.I. Show|TAMI Show; Mr. Please Please Please`},
+ gem:`Danny Ray`},
 
 {id:'chars-lotteryticket', q:"Name a character from Lottery Ticket", like:"Kevin Carson", t:{
  b:`Kevin Carson|Kevin; Benny; Stacie; Grandma`,
@@ -17953,7 +17951,49 @@ const DATA = [
  b:`Flexing|flex|flexin; Stunting|stuntin|stunt; Showing out|show out|showin out; Flossing|flossin|floss`,
  s:`Frontin'|fronting|frontin|front; Balling|ballin`,
  l:`Doing the most; Doing too much; Extra; Showboating|showboat; Shining|shinin; Swagging|swaggin|swag; Styling|stylin; Profiling|profilin; Peacocking; Bougie|boujee; Acting brand new|brand new; Hot-dogging|hotdogging|hot dogging; Grandstanding; Putting on|puttin on`},
- gem:`Big-timing|big timing|big timin|big-timin`}
+ gem:`Big-timing|big timing|big timin|big-timin`},
+
+{id:'gen-mj', q:"Name something tied to Michael Jackson (not a song)", like:"the moonwalk", t:{
+ b:`The moonwalk|moonwalk; The glove|sequined glove|white glove|one glove; King of Pop; Thriller video|Thriller music video|Thriller`,
+ s:`The Jackson 5|Jackson 5|Jackson Five; Gary, Indiana|Gary Indiana|Gary`,
+ l:`Motown 25|Motown 25: Yesterday, Today, Forever; Quincy Jones; The fedora|fedora; White socks|socks and loafers|loafers; Red leather jacket|red jacket; Off the Wall; Bad; Thriller album|best-selling album of all time|best-selling album; Moonwalker; Moonwalk (book)|Moonwalk memoir; Captain EO; The Wiz|Scarecrow; We Are the World; Bubbles|Bubbles the chimp; Janet Jackson|Janet; Joe Jackson; Katherine Jackson; Encino|Hayvenhurst; Pepsi commercial|Pepsi; Super Bowl XXVII halftime|Super Bowl halftime show|1993 Super Bowl; Victory Tour; Bad Tour; Dangerous; This Is It; The lean|Smooth Criminal lean; Armband; Prince, Paris and Blanket|his kids`},
+ gem:`Anti-gravity lean patent|patent|anti-gravity shoes`},
+
+{id:'books-banned', q:"Name a book by a Black author that has been banned or challenged in schools", like:"The Bluest Eye", t:{
+ b:`The Bluest Eye|Bluest Eye; The Color Purple|Color Purple; I Know Why the Caged Bird Sings|Caged Bird; The Hate U Give|Hate U Give|THUG`,
+ s:`Beloved; All Boys Aren't Blue|All Boys Arent Blue`,
+ l:`Stamped: Racism, Antiracism, and You|Stamped; All American Boys; Dear Martin; Native Son; Invisible Man; Between the World and Me; New Kid; Ghost Boys; Roll of Thunder, Hear My Cry|Roll of Thunder Hear My Cry; Soul on Ice; Best Short Stories by Negro Writers; A Hero Ain't Nothin' but a Sandwich|A Hero Aint Nothin but a Sandwich`},
+ gem:`Black Boy`},
+
+{id:'life-thanksgivingday', q:"Name something that happens at a Black family Thanksgiving (not a food)", like:"football on TV", t:{
+ b:`Football on TV|football|the game|Cowboys game|Lions game; Spades|playing spades|cards; To-go plates|plates to go|taking a plate home|foil plates; Saying grace|grace|prayer|blessing the food`,
+ s:`Macy's Thanksgiving Day Parade|Macy's parade|Macys parade|the parade; Kids' table|kids table`,
+ l:`Dominoes; Uno; Naps|the itis|falling asleep on the couch; Family photos|group picture; Going around saying what you're thankful for|saying what you're thankful for; Black Friday shopping|Black Friday; Family drama|arguing|debates; Old-school music|music playing|Frankie Beverly and Maze; Tupperware|containers; Cousins coming in from out of town|family traveling in|relatives visiting; Backyard football|Turkey Bowl|touch football; Cooking the night before|cooking all night; Church service|Thanksgiving service; Serving the community|feeding the homeless|volunteering; Putting up the Christmas tree|Christmas decorations; Watching a movie|movie marathon; Washing dishes|cleaning up`},
+ gem:`Bayou Classic|Grambling vs Southern`},
+
+{id:'music-dancesongs', q:"Name a song by a Black artist with \"Dance\" or \"Dancing\" in the title", like:"I Wanna Dance with Somebody", t:{
+ b:`I Wanna Dance with Somebody (Who Loves Me)|I Wanna Dance with Somebody|I Wanna Dance With Somebody; Dance with My Father; Dancing in the Street|Dancing in the Streets; Dancing Machine|Dancin Machine`,
+ s:`Last Dance; Dance to the Music`,
+ l:`Save the Last Dance for Me; One Dance; Dancing on the Ceiling; Dance Wit' Me|Dance Wit Me|Dance with Me (Rick James); Dance (Disco Heat)|Dance Disco Heat; Dance with Me|Dance With Me (112); Dance for You; Dance (A$$)|Dance Ass|Dance (Ass); Dance Floor; Dance Little Sister; Dance Tonight; Dancing in the Sheets; Dance On`},
+ gem:`Dance, Dance, Dance (Yowsah, Yowsah, Yowsah)|Dance Dance Dance|Yowsah`},
+
+{id:'media-schoolshows', q:"Name a movie or show set at a school (not college) with Black stars", like:"Lean on Me", t:{
+ b:`Lean on Me; Abbott Elementary; Coach Carter; Everybody Hates Chris; Cooley High`,
+ s:`Save the Last Dance; Remember the Titans`,
+ l:`Dope; The Hate U Give|Hate U Give; The Steve Harvey Show|Steve Harvey Show; Moesha; Smart Guy; Boston Public; All American; Akeelah and the Bee|Akeelah; Fame; On My Block; Grand Army; Selah and the Spades`},
+ gem:`Sister Act 2: Back in the Habit|Sister Act 2`},
+
+{id:'life-mad', q:"Name a slang way to say someone is mad or upset", like:"salty", t:{
+ b:`Salty; Pressed; Tight; Heated; Big mad`,
+ s:`In their feelings|in your feelings|in my feelings; Trippin'|tripping|trippin`,
+ l:`Hot; Mad; Bent out of shape|bent; Buggin'|bugging|buggin; Vexed; Steamed; Ticked off|ticked; Hot under the collar; Fed up; Sick of it|sick and tired; Fuming; Worked up; Up in arms`},
+ gem:`Jump salty|jumping salty`},
+
+{id:'sport-moments', q:"Name a famous sports moment starring a Black athlete", like:"Jackie Robinson's debut", t:{
+ b:`Jackie Robinson's debut|Jackie Robinson breaking the color barrier|Jackie Robinson 1947|Jackie Robinson; Jesse Owens at the 1936 Olympics|Jesse Owens four gold medals|Jesse Owens; Hank Aaron's 715th home run|Hank Aaron 715|Hank Aaron; The 1968 Olympics Black Power salute|Black Power salute|Tommie Smith and John Carlos|raised fists`,
+ s:`Rumble in the Jungle|Ali vs Foreman; Kobe's 81-point game|Kobe 81|81 points`,
+ l:`Thrilla in Manila|Ali vs Frazier; Fight of the Century|Ali vs Frazier 1971; Wilt Chamberlain's 100-point game|Wilt 100|100 points; Jordan's flu game|Flu Game; The Shot|Jordan The Shot; Jordan's last shot in 1998|The Last Shot; Willie Mays' catch|The Catch 1954|Willie Mays catch; Doug Williams winning Super Bowl XXII|Doug Williams Super Bowl; Ali lighting the Olympic torch|Ali 1996 torch|1996 torch; Colin Kaepernick kneeling|Kaepernick kneeling|taking a knee; Usain Bolt's 9.58|Bolt world record|9.58; Tiger Woods winning the 1997 Masters|Tiger 1997 Masters|1997 Masters; LeBron's block|The Block|LeBron chase-down block 2016; Ray Allen's corner three|Ray Allen 2013 shot; Kawhi Leonard's bounce shot|Kawhi buzzer beater|Kawhi 2019 shot; Odell Beckham Jr.'s one-handed catch|Odell catch|one-handed catch; David Tyree's helmet catch|Helmet Catch; Allen Iverson stepping over Tyronn Lue|Iverson step-over|step-over; Kobe's 60-point final game|Mamba Out|Kobe 60; Simone Biles' Yurchenko double pike|Yurchenko double pike; Gabby Douglas winning the all-around|Gabby Douglas 2012`},
+ gem:`Joe Louis knocking out Max Schmeling|Louis vs Schmeling|Joe Louis vs Max Schmeling|Louis-Schmeling rematch`}
 ];
 
 </script>
