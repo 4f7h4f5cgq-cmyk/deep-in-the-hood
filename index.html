@@ -1422,14 +1422,14 @@ const DATA = [
 {id:'song-mansname', q:"Name a song by a Black artist with a man's name in the title", like:"Ben", t:{
  b:`Ben; Hit the Road Jack; Johnny B. Goode|Johnny B Goode; Tyrone; Jimmy Mack`,
  s:`Marvin's Room|Marvins Room; Freddie's Dead|Freddies Dead`,
- l:`Nathan Jones; Charlie Brown; Hey Joe; Bo Diddley; Mr. Wendal|Mr Wendal|Mister Wendal; Kevin's Heart|Kevins Heart; Wesley's Theory|Wesleys Theory; King Kunta; Abraham, Martin and John|Abraham Martin and John; Peter Piper; Jesse; Frankie; Jimmy Lee; Jamie; Mickey's Monkey|Mickeys Monkey`,
- r:`Willie and the Hand Jive; Jody's Got Your Girl and Gone|Jodys Got Your Girl and Gone|Jody`},
+ l:`Nathan Jones; Charlie Brown; Hey Joe; Bo Diddley; Mr. Wendal|Mr Wendal|Mister Wendal; Kevin's Heart|Kevins Heart; Wesley's Theory|Wesleys Theory; King Kunta; Abraham, Martin and John|Abraham Martin and John; Peter Piper; Jesse; Frankie; Jimmy Lee; Jamie; Mickey's Monkey|Mickeys Monkey; Stagger Lee|Stagolee`,
+ r:`Jody's Got Your Girl and Gone|Jodys Got Your Girl and Gone|Jody`},
  gem:`Louie Louie`},
 
 {id:'surname-wright', q:"Name a famous Black person with the last name Wright", like:"Richard Wright", people:true, t:{
  b:`Richard Wright; Jeffrey Wright; Letitia Wright; Betty Wright`,
  s:`Marian Wright Edelman; Jeremiah Wright`,
- l:`Eazy-E|Eric Wright|Eazy E; Charles Wright; O.V. Wright|OV Wright; Syreeta Wright|Syreeta; Rayfield Wright; Dorell Wright; Julian Wright; Sharone Wright; Eugene Wright`,
+ l:`Eazy-E|Eric Wright|Eazy E; Charles Wright; O.V. Wright|OV Wright; Syreeta Wright|Syreeta; Rayfield Wright; Dorell Wright; Julian Wright; Sharone Wright; Eugene Wright; Samuel E. Wright|Samuel Wright`,
  r:`Louis T. Wright|Louis Tompkins Wright; Elizabeth Evelyn Wright; Richard Robert Wright Sr.; Sarah E. Wright; Bruce Wright`},
  gem:`Jane Cooke Wright|Jane Wright`},
 
@@ -1440,13 +1440,11 @@ const DATA = [
  r:`Cool Whip tub|Cool Whip container; Chitlins; Ham hocks|smoked turkey necks; Pig feet; Buttermilk; Pickled eggs|pickled pig feet`},
  gem:`Baking soda box|baking soda|Arm & Hammer`},
 
-{id:'stars-angelabassett', q:"Name a movie or show starring Angela Bassett", like:"What's Love Got to Do with It", t:{
- b:`What's Love Got to Do with It|Whats Love Got to Do with It; Waiting to Exhale; How Stella Got Her Groove Back; Black Panther`,
- s:`Malcolm X; Boyz n the Hood|Boyz in the Hood`,
- l:`9-1-1|911; American Horror Story; Strange Days; Akeelah and the Bee; The Rosa Parks Story|Rosa Parks Story; Mission: Impossible – Fallout|Mission Impossible Fallout; Black Panther: Wakanda Forever|Wakanda Forever; Notorious; Jumping the Broom; Olympus Has Fallen; London Has Fallen; Contact; Supernova; Mr. 3000; Meet the Robinsons; Soul; Vampire in Brooklyn`,
- r:`ER; Panther; Sunshine State`,
- o:`City of Hope`},
- gem:`The Jacksons: An American Dream|The Jacksons An American Dream`},
+{id:'music-stations', q:"Name a radio station famous for Black music", like:"Hot 97", t:{
+ b:`Hot 97|WQHT; WBLS; Power 105.1|Power 105|WWPR`,
+ s:`WVON; WDIA`,
+ l:`WGCI; WHUR; V-103|WVEE|V103; KJLH; WJLB; KDAY; Power 106|KPWR; 92Q|WERQ; WOL; WKYS; WPGC; Hot 107.9|WHTA; WDAS; Majic 102|KMJQ; 97.9 The Box|The Box|KBXX; 99 Jamz|WEDR`},
+ gem:`WERD`},
 
 {id:'sport-bengals', q:"Name a Black Cincinnati Bengals legend", like:"Ja'Marr Chase", people:true, t:{
  b:`Ja'Marr Chase|JaMarr Chase; Chad Johnson|Ochocinco|Chad Ochocinco; A.J. Green|AJ Green; Corey Dillon; Ken Riley`,
@@ -1468,19 +1466,17 @@ const DATA = [
  l:`New England Conservatory of Music|New England Conservatory; Freedom Concerts; Coretta Scott King Book Award|Coretta Scott King Award; My Life with Martin Luther King Jr.; My Life, My Love, My Legacy; Yolanda King; Martin Luther King III; Dexter Scott King; Bernice King; Ebenezer Baptist Church; Anti-apartheid activism|anti-apartheid; Women Strike for Peace; Selma; Memphis march; Stevie Wonder; Full Employment Action Council|full employment; Gay rights|LGBTQ rights; Congressional Gold Medal; Lay in honor at the Georgia Capitol|Georgia State Capitol; Poor People's Campaign; The Embrace (Boston sculpture)|The Embrace`},
  gem:`Edythe Scott Bagley`},
 
-{id:'surname-campbell', q:"Name a famous Black person with the last name Campbell or Caldwell", like:"Naomi Campbell", people:true, t:{
- b:`Naomi Campbell; Earl Campbell; Tisha Campbell; Luther Campbell|Uncle Luke`,
- s:`Bebe Moore Campbell; Erica Campbell`,
- l:`Tina Campbell; Milt Campbell; Sol Campbell; Mary Schmidt Campbell; Jason Campbell; E. Simms Campbell|Elmer Simms Campbell; Tevin Campbell; Elden Campbell; Calais Campbell; Veronica Campbell-Brown; Jim Caldwell; Kentavious Caldwell-Pope`,
- r:`Tony Campbell; Earl Caldwell; Joe Caldwell; Reche Caldwell; Andre Caldwell; L. Scott Caldwell`},
- gem:`Kool Herc|Clive Campbell|DJ Kool Herc`},
+{id:'media-superheroines', q:"Name a Black actress who played a superhero", like:"Halle Berry", people:true, t:{
+ b:`Halle Berry; Letitia Wright; Zoe Saldaña|Zoe Saldana; Teyonah Parris`,
+ s:`Zazie Beetz; Simone Missick`,
+ l:`China Anne McClain; Dominique Thorne; Alexandra Shipp; Javicia Leslie; Megalyn Echikunwoke; Lashana Lynch; Tessa Thompson; Jurnee Smollett; Anna Diop; Maisie Richardson-Sellers; Danai Gurira; Zoë Kravitz|Zoe Kravitz; Lauren Ridloff; Diamond White; Issa Rae`},
+ gem:`Nafessa Williams`},
 
-{id:'surname-scott', q:"Name a famous Black person with the last name Scott", like:"Jill Scott", people:true, t:{
- b:`Jill Scott; Hazel Scott; Stuart Scott; Byron Scott`,
- s:`Tim Scott; Bobby Scott`,
- l:`Dred Scott; Dennis Scott; Bart Scott; "Little" Jimmy Scott|Little Jimmy Scott|Jimmy Scott; Emmett J. Scott|Emmett Scott`,
- r:`Harriet Robinson Scott; Gloria Dean Randle Scott; Shirley Scott; Christian Scott; Mike Scott; Brandon Scott; Clifford Scott; Rhoda Scott`},
- gem:`Wendell Scott`},
+{id:'life-disbelief', q:"Name a way to say 'no way' or 'you lying'", like:"stop playing", t:{
+ b:`Stop playing|stop playin; Ain't no way|aint no way; Quit lying|quit lyin; You lying|you lyin; Cap|that's cap`,
+ s:`Get out of here|get outta here; Boy, bye|Girl, bye`,
+ l:`Nah; Stop the cap; Run that back; Come again?|come again; Say what?|say what; You serious?|you serious; Hold up|wait a minute; Lies; Don't play with me|dont play with me; You trippin'|you trippin; Whatchu mean?|what you mean; Get out!; Chile, what?|chile what; Huh?|huh; No way|no way Jose; Be for real|be fr; Not today; Who told you that?|who told you that; Yeah, right|yeah right`},
+ gem:`Picture that`},
 
 {id:'sport-initials', q:"Name a Black athlete known by their initials", like:"MJ", t:{
  b:`MJ (Michael Jordan)|MJ; KD (Kevin Durant)|KD; AI (Allen Iverson)|AI; LT (Lawrence Taylor, LaDainian Tomlinson)|LT; CP3 (Chris Paul)|CP3`,
@@ -2051,12 +2047,12 @@ const DATA = [
  r:`Cadillac Records; The Soul Man|Soul Man; Kingdom Come; Serving Sara`},
  gem:`Cedric the Entertainer Presents`},
 
-{id:'members-malaco', q:"Name a Malaco Records artist", like:"Johnnie Taylor", people:true, t:{
- b:`Johnnie Taylor; Z.Z. Hill|ZZ Hill; Bobby "Blue" Bland|Bobby Blue Bland|Bobby Bland`,
- s:`Denise LaSalle; Little Milton`,
- l:`Latimore|Benny Latimore; Shirley Brown; Willie Clayton; Mississippi Mass Choir; Jackson Southernaires; The Williams Brothers|Williams Brothers; Bobby Rush; Tyrone Davis; King Floyd; Jean Knight; Eddie Floyd; Sounds of Blackness`,
- r:`Floyd Taylor; Mel Waiters; The Pilgrim Jubilees|Pilgrim Jubilees; Dottie Peoples; LaShun Pace; Anita Ward`},
- gem:`Dorothy Moore`},
+{id:'gen-janet', q:"Name something tied to Janet Jackson (not a song)", like:"Rhythm Nation 1814", t:{
+ b:`Rhythm Nation 1814|Rhythm Nation; Michael Jackson|MJ|her brother Michael; Good Times; Poetic Justice; Control (album)|Control`,
+ s:`Penny (Good Times)|Penny; Jimmy Jam and Terry Lewis|Jimmy Jam|Terry Lewis|Jam and Lewis`,
+ l:`The Velvet Rope|Velvet Rope; janet. (album)|janet.|Janet album; All for You (album)|All for You; Diff'rent Strokes|Different Strokes|Diffrent Strokes; Fame (TV series)|Fame; Justice (Poetic Justice role)|Justice; Rhythm Nation 1814 Tour|Rhythm Nation Tour; Rock and Roll Hall of Fame|Rock Hall; The Jacksons (TV show)|The Jacksons variety show; Gary, Indiana|Gary; Jackson family|The Jacksons|Jackson 5; Why Did I Get Married?|Why Did I Get Married; Nutty Professor II: The Klumps|Nutty Professor 2|Nutty Professor II; For Colored Girls; Damita Jo; Discipline; Unbreakable; 20 Y.O.|20 YO; Oscar nomination (1994)|Oscar nomination`,
+ r:`Charlene (Diff'rent Strokes)|Charlene; Janet Jackson (1982 debut album)|debut album; Dream Street; A&M Records|A&M; Virgin Records deal|Virgin Records`},
+ gem:`Paula Abdul`},
 
 {id:'from-houston', q:"Name a famous Black person from Houston", like:"Beyoncé", people:true, t:{
  b:`Beyoncé|Beyonce; Solange; Megan Thee Stallion|Megan the Stallion; Travis Scott; Lizzo`,
@@ -4444,11 +4440,13 @@ const DATA = [
  r:`Born Not to Know; Baby Doll; For the Love of You; Me and You; House Party (I Don't Know What You Come to Do)|House Party; Waiting on You; Annie May`},
  gem:`Little Walter`},
 
-{id:'music-stations', q:"Name a radio station famous for Black music", like:"Hot 97", t:{
- b:`Hot 97|WQHT; WBLS; Power 105.1|Power 105|WWPR`,
- s:`WVON; WDIA`,
- l:`WGCI; WHUR; V-103|WVEE|V103; KJLH; WJLB; KDAY; Power 106|KPWR; 92Q|WERQ; WOL; WKYS; WPGC; Hot 107.9|WHTA; WDAS; Majic 102|KMJQ; 97.9 The Box|The Box|KBXX; 99 Jamz|WEDR`},
- gem:`WERD`},
+{id:'stars-angelabassett', q:"Name a movie or show starring Angela Bassett", like:"What's Love Got to Do with It", t:{
+ b:`What's Love Got to Do with It|Whats Love Got to Do with It; Waiting to Exhale; How Stella Got Her Groove Back; Black Panther`,
+ s:`Malcolm X; Boyz n the Hood|Boyz in the Hood`,
+ l:`9-1-1|911; American Horror Story; Strange Days; Akeelah and the Bee; The Rosa Parks Story|Rosa Parks Story; Mission: Impossible – Fallout|Mission Impossible Fallout; Black Panther: Wakanda Forever|Wakanda Forever; Notorious; Jumping the Broom; Olympus Has Fallen; London Has Fallen; Contact; Supernova; Mr. 3000; Meet the Robinsons; Soul; Vampire in Brooklyn`,
+ r:`ER; Panther; Sunshine State`,
+ o:`City of Hope`},
+ gem:`The Jacksons: An American Dream|The Jacksons An American Dream`},
 
 {id:'chars-cosbyshow', q:"Name a character from The Cosby Show", like:"Cliff Huxtable", t:{
  b:`Cliff Huxtable|Cliff|Heathcliff Huxtable; Clair Huxtable|Clair; Theo Huxtable|Theo; Rudy Huxtable|Rudy; Denise Huxtable|Denise`,
@@ -4601,11 +4599,12 @@ const DATA = [
  l:`Matigari; I Will Marry When I Want; Dreams in a Time of War; In the House of the Interpreter; Birth of a Dream Weaver; The Perfect Nine; Detained; Homecoming; Moving the Centre; Something Torn and New; Globalectics; Wrestling with the Devil`},
  gem:`The Upright Revolution|The Upright Revolution: Or Why Humans Walk Upright`},
 
-{id:'media-superheroines', q:"Name a Black actress who played a superhero", like:"Halle Berry", people:true, t:{
- b:`Halle Berry; Letitia Wright; Zoe Saldaña|Zoe Saldana; Teyonah Parris`,
- s:`Zazie Beetz; Simone Missick`,
- l:`China Anne McClain; Dominique Thorne; Alexandra Shipp; Javicia Leslie; Megalyn Echikunwoke; Lashana Lynch; Tessa Thompson; Jurnee Smollett; Anna Diop; Maisie Richardson-Sellers; Danai Gurira; Zoë Kravitz|Zoe Kravitz; Lauren Ridloff; Diamond White; Issa Rae`},
- gem:`Nafessa Williams`},
+{id:'surname-campbell', q:"Name a famous Black person with the last name Campbell or Caldwell", like:"Naomi Campbell", people:true, t:{
+ b:`Naomi Campbell; Earl Campbell; Tisha Campbell; Luther Campbell|Uncle Luke`,
+ s:`Bebe Moore Campbell; Erica Campbell`,
+ l:`Tina Campbell; Milt Campbell; Sol Campbell; Mary Schmidt Campbell; Jason Campbell; E. Simms Campbell|Elmer Simms Campbell; Tevin Campbell; Elden Campbell; Calais Campbell; Veronica Campbell-Brown; Jim Caldwell; Kentavious Caldwell-Pope`,
+ r:`Tony Campbell; Earl Caldwell; Joe Caldwell; Reche Caldwell; Andre Caldwell; L. Scott Caldwell`},
+ gem:`Kool Herc|Clive Campbell|DJ Kool Herc`},
 
 {id:'people-saints', q:"Name a Black Catholic saint or saintly figure", like:"Martin de Porres", people:true, t:{
  b:`Martin de Porres|St. Martin de Porres|Saint Martin de Porres; Josephine Bakhita|St. Josephine Bakhita; Charles Lwanga|St. Charles Lwanga; Moses the Black|St. Moses the Black`,
@@ -4635,11 +4634,12 @@ const DATA = [
  r:`Shadey; Kulubi Gabriel|Kulubi; Fichee Chambalaalla|Fichee|Sidama New Year; Gada system|Gada; Habesha kemis|habesha dress; Ethiopian calendar|13 months of sunshine; Sigd; Hidar Tsion|Hidar Zion; Ethiopian time|Ethiopian clock`},
  gem:`Gursha`},
 
-{id:'carib-nationaldish', q:"Name a Caribbean country's national dish", like:"ackee and saltfish", t:{
- b:`Ackee and saltfish (Jamaica)|Ackee and saltfish|ackee; Griot (Haiti)|Griot|Soup joumou; Pelau (Trinidad and Tobago)|Pelau|callaloo and crab; Cou-cou and flying fish (Barbados)|cou-cou and flying fish|cou cou|flying fish`,
- s:`Oil down (Grenada)|Oil down; Mofongo (Puerto Rico)|Mofongo|arroz con gandules`,
- l:`Ropa vieja (Cuba)|Ropa vieja; La bandera (Dominican Republic)|La bandera|mangu; Pepperpot (Guyana)|Pepperpot|pepper pot; Fungie and pepperpot (Antigua and Barbuda)|Fungie|fungi; Green fig and saltfish (Saint Lucia)|Green fig and saltfish|green fig; Roasted breadfruit and fried jackfish (Saint Vincent)|Breadfruit and jackfish|roasted breadfruit; Cracked conch (Bahamas)|Cracked conch|conch salad|conch; Rice and beans (Belize)|Belizean rice and beans|boil up; Stewed saltfish (Saint Kitts and Nevis)|Stewed saltfish; Callaloo soup (Dominica)|Callaloo soup; Turtle stew (Cayman Islands)|Turtle stew; Pom (Suriname)|Pom; Colombo (Guadeloupe and Martinique)|Colombo`},
- gem:`Keshi yena (Curaçao and Aruba)|Keshi yena`},
+{id:'surname-scott', q:"Name a famous Black person with the last name Scott", like:"Jill Scott", people:true, t:{
+ b:`Jill Scott; Hazel Scott; Stuart Scott; Byron Scott`,
+ s:`Tim Scott; Bobby Scott`,
+ l:`Dred Scott; Dennis Scott; Bart Scott; "Little" Jimmy Scott|Little Jimmy Scott|Jimmy Scott; Emmett J. Scott|Emmett Scott`,
+ r:`Harriet Robinson Scott; Gloria Dean Randle Scott; Shirley Scott; Christian Scott; Mike Scott; Brandon Scott; Clifford Scott; Rhoda Scott`},
+ gem:`Wendell Scott`},
 
 {id:'stars-danai', q:"Name a movie or show starring Danai Gurira", like:"The Walking Dead", t:{
  b:`The Walking Dead|Walking Dead; Black Panther; Black Panther: Wakanda Forever|Wakanda Forever`,
@@ -5361,11 +5361,11 @@ const DATA = [
  r:`Garland Anderson; Regina M. Anderson|Regina Anderson; Osborne Perry Anderson`},
  gem:`Charles "Chief" Anderson|Chief Anderson|C. Alfred Anderson|Charles Alfred Anderson`},
 
-{id:'life-disbelief', q:"Name a way to say 'no way' or 'you lying'", like:"stop playing", t:{
- b:`Stop playing|stop playin; Ain't no way|aint no way; Quit lying|quit lyin; You lying|you lyin; Cap|that's cap`,
- s:`Get out of here|get outta here; Boy, bye|Girl, bye`,
- l:`Nah; Stop the cap; Run that back; Come again?|come again; Say what?|say what; You serious?|you serious; Hold up|wait a minute; Lies; Don't play with me|dont play with me; You trippin'|you trippin; Whatchu mean?|what you mean; Get out!; Chile, what?|chile what; Huh?|huh; No way|no way Jose; Be for real|be fr; Not today; Who told you that?|who told you that; Yeah, right|yeah right`},
- gem:`Picture that`},
+{id:'carib-nationaldish', q:"Name a Caribbean country's national dish", like:"ackee and saltfish", t:{
+ b:`Ackee and saltfish (Jamaica)|Ackee and saltfish|ackee; Griot (Haiti)|Griot|Soup joumou; Pelau (Trinidad and Tobago)|Pelau|callaloo and crab; Cou-cou and flying fish (Barbados)|cou-cou and flying fish|cou cou|flying fish`,
+ s:`Oil down (Grenada)|Oil down; Mofongo (Puerto Rico)|Mofongo|arroz con gandules`,
+ l:`Ropa vieja (Cuba)|Ropa vieja; La bandera (Dominican Republic)|La bandera|mangu; Pepperpot (Guyana)|Pepperpot|pepper pot; Fungie and pepperpot (Antigua and Barbuda)|Fungie|fungi; Green fig and saltfish (Saint Lucia)|Green fig and saltfish|green fig; Roasted breadfruit and fried jackfish (Saint Vincent)|Breadfruit and jackfish|roasted breadfruit; Cracked conch (Bahamas)|Cracked conch|conch salad|conch; Rice and beans (Belize)|Belizean rice and beans|boil up; Stewed saltfish (Saint Kitts and Nevis)|Stewed saltfish; Callaloo soup (Dominica)|Callaloo soup; Turtle stew (Cayman Islands)|Turtle stew; Pom (Suriname)|Pom; Colombo (Guadeloupe and Martinique)|Colombo`},
+ gem:`Keshi yena (Curaçao and Aruba)|Keshi yena`},
 
 {id:'song-delfonics', q:"Name a Delfonics song", like:"La-La Means I Love You", t:{
  b:`La-La Means I Love You|La La Means I Love You; Didn't I (Blow Your Mind This Time)|Didn't I Blow Your Mind This Time|Didn't I; Ready or Not Here I Come (Can't Hide from Love)|Ready or Not Here I Come`,
@@ -18413,7 +18413,51 @@ const DATA = [
  s:`When Doves Cry; Buffalo Soldier`,
  l:`Rockin' Robin|Rockin Robin; Do the Funky Chicken|Funky Chicken; Pony Time; The Bird; Panda; Black Cat; Kitty Kat; Butterflies; Butterfly; Batdance; Rat Race; Chicken Noodle Soup; Little Red Rooster; Crawling King Snake|Crawlin' King Snake; Mickey's Monkey|Mickeys Monkey; The Monkey Time|Monkey Time; Butterfly Effect`,
  r:`Mockingbird; Do the Bird; Let's Turkey Trot|Lets Turkey Trot; Blackbird`},
- gem:`Walking the Dog|Walkin' the Dog`}
+ gem:`Walking the Dog|Walkin' the Dog`},
+
+{id:'gen-outkast', q:"Name something tied to OutKast (not a song)", like:"André 3000", t:{
+ b:`André 3000|Andre 3000|André Benjamin|Andre Benjamin|Andre; Big Boi|Antwan Patton; Atlanta|ATL; Stankonia; Speakerboxxx/The Love Below|Speakerboxxx|The Love Below`,
+ s:`Aquemini; ATLiens`,
+ l:`Southernplayalisticadillacmuzik; Idlewild; Dungeon Family; Organized Noize; Goodie Mob; LaFace Records|LaFace; 1995 Source Awards|Source Awards; Album of the Year Grammy|Grammy Album of the Year|Album of the Year; Rock and Roll Hall of Fame|Rock Hall; Tri-Cities High School|Tri-Cities; East Point; Sleepy Brown; Killer Mike; Cee-Lo Green|CeeLo Green|Cee Lo|CeeLo; Sir Lucious Left Foot: The Son of Chico Dusty|Sir Lucious Left Foot; New Blue Sun|flute|André's flute; Class of 3000; Purple Ribbon Records|Purple Ribbon; Daddy Fat Sacks|Daddy Fat Sax`},
+ gem:`A LaFace Family Christmas|LaFace Family Christmas`},
+
+{id:'chars-boomerang', q:"Name a character from Boomerang, the 1992 Eddie Murphy movie", like:"Marcus Graham", t:{
+ b:`Marcus Graham|Marcus; Angela Lewis|Angela; Jacqueline Broyer|Jacqueline|Jacqueline Boyer; Strangé|Strange; Tyler`,
+ s:`Gerard|Gerard Jackson; Bony T|Bony T.`,
+ l:`Nelson; Yvonne; Christie; Mr. Jackson|Mr Jackson; Mrs. Jackson|Mrs Jackson`},
+ gem:`Lady Eloise`},
+
+{id:'named-gloria', q:"Name a famous Black person named Gloria", like:"Gloria Gaynor", people:true, t:{
+ b:`Gloria Gaynor; GloRilla|Gloria Woods|Glorilla; bell hooks|Gloria Jean Watkins|Gloria Watkins; Gloria Naylor`,
+ s:`Gloria Reuben; Gloria Carter`,
+ l:`Gloria Ray Karlmark|Gloria Ray; Gloria Hendry; Gloria Foster; Gloria Lynne; Gloria Jones; Gloria Dean Randle Scott|Gloria Scott; Gloria Wade-Gayles; Gloria Ladson-Billings; Gloria Govan`},
+ gem:`Gloria Richardson`},
+
+{id:'from-dominican', q:"Name a famous Black person from the Dominican Republic", like:"David Ortiz", people:true, t:{
+ b:`David Ortiz|Big Papi; Pedro Martínez|Pedro Martinez; Sammy Sosa; Vladimir Guerrero|Vlad Guerrero; Albert Pujols`,
+ s:`Juan Soto; Al Horford`,
+ l:`Juan Marichal; Rafael Devers; Nelson Cruz; Edwin Encarnación|Edwin Encarnacion; Johnny Cueto; Julio Franco; Felipe Alou; Rico Carty; Tony Fernández|Tony Fernandez; Pedro Guerrero; Bartolo Colón|Bartolo Colon; Marileidy Paulino; Johnny Ventura; Francisco García|Francisco Garcia; Felipe López|Felipe Lopez; Tito Horford`,
+ r:`Ozzie Virgil Sr.|Ozzie Virgil; Matty Alou; Jesús Alou|Jesus Alou; Luguelín Santos|Luguelin Santos; José Francisco Peña Gómez|Jose Francisco Pena Gomez|Peña Gómez`},
+ gem:`George Bell`},
+
+{id:'hist-1977', q:"Name something that happened in Black history in 1977", like:"Roots airs on ABC", t:{
+ b:`Roots airs on ABC|Roots|Roots miniseries; Reggie Jackson hits 3 home runs in a World Series game|Reggie Jackson|Mr. October; James Earl Jones voices Darth Vader in Star Wars|Darth Vader|Star Wars; Songs in the Key of Life wins Album of the Year|Songs in the Key of Life|Stevie Wonder; Walter Payton runs for 275 yards|Walter Payton|Sweetness`,
+ s:`Andrew Young becomes UN ambassador|Andrew Young; Lou Brock breaks Ty Cobb's stolen base record|Lou Brock`,
+ l:`Patricia Roberts Harris joins the Cabinet at HUD|Patricia Roberts Harris; Earl Campbell wins the Heisman|Earl Campbell; Toni Morrison publishes Song of Solomon|Song of Solomon|Toni Morrison; Alex Haley wins a special Pulitzer for Roots|Alex Haley; Clifford Alexander becomes Secretary of the Army|Clifford Alexander; Benjamin Hooks takes over the NAACP|Benjamin Hooks; Ernie Banks enters the Baseball Hall of Fame|Ernie Banks; Gale Sayers enters the Pro Football Hall of Fame|Gale Sayers; The Richard Pryor Show airs on NBC|The Richard Pryor Show|Richard Pryor Show; Commodores release Brick House|Brick House; Marvin Gaye's Got to Give It Up hits No. 1|Got to Give It Up; Thelma Houston's Don't Leave Me This Way hits No. 1|Don't Leave Me This Way|Dont Leave Me This Way; The Emotions' Best of My Love hits No. 1|Best of My Love|The Emotions; Muhammad Ali beats Earnie Shavers|Ali vs. Shavers|Muhammad Ali; Parliament releases Funkentelechy vs. the Placebo Syndrome|Funkentelechy; Martín Dihigo enters the Baseball Hall of Fame|Martin Dihigo`},
+ gem:`Dutch Morial elected New Orleans' first Black mayor|Dutch Morial|Ernest Morial`},
+
+{id:'sport-dline', q:"Name a Black NFL defensive lineman", like:"Reggie White", people:true, t:{
+ b:`Reggie White; Bruce Smith; Deacon Jones; Michael Strahan; Aaron Donald`,
+ s:`Warren Sapp; Mean Joe Greene|Joe Greene`,
+ l:`Julius Peppers; Jason Taylor; Myles Garrett; Chris Jones; Cameron Jordan; Richard Seymour; Cortez Kennedy; John Randle; Alan Page; Carl Eller; Lee Roy Selmon; Elvin Bethea; Willie Davis; Buck Buchanan; Dwight Freeney; Robert Mathis; Simeon Rice; Richard Dent; Ed "Too Tall" Jones|Too Tall Jones|Ed Jones; L.C. Greenwood|LC Greenwood; Ndamukong Suh; Charles Haley; Calais Campbell; Cameron Heyward; Chris Doleman; Jevon Kearse; Mario Williams; Harvey Martin`,
+ r:`Lamar Lundy; Leslie O'Neal|Leslie ONeal; Ernie Holmes; Kevin Williams; Pat Williams; Michael Bennett; Fletcher Cox; DeMarcus Ware`},
+ gem:`Rosey Grier|Roosevelt Grier`},
+
+{id:'song-112', q:"Name a 112 song", like:"Cupid", t:{
+ b:`Cupid; Peaches & Cream|Peaches and Cream; Only You; Anywhere`,
+ s:`It's Over Now|Its Over Now; Love Me`,
+ l:`Dance with Me; Come See Me; Hot & Wet|Hot and Wet; U Already Know|You Already Know; Your Letter; Now That We're Done|Now That Were Done; Pleasure & Pain|Pleasure and Pain; Call My Name; Stay with Me`},
+ gem:`Love You Like I Did`}
 ];
 
 </script>
