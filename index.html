@@ -1928,7 +1928,7 @@ const DATA = [
 {id:'hist-firstwomen', q:"Name a Black woman known for a historic first", like:"Shirley Chisholm", people:true, t:{
  b:`Shirley Chisholm; Kamala Harris; Mae Jemison; Bessie Coleman; Michelle Obama`,
  s:`Hattie McDaniel; Halle Berry`,
- l:`Madam C.J. Walker|Madam CJ Walker|Madame CJ Walker; Constance Baker Motley; Ketanji Brown Jackson; Condoleezza Rice; Oprah Winfrey|Oprah; Patricia Roberts Harris; Carol Moseley Braun; Barbara Jordan; Jane Bolin; Charlotte E. Ray|Charlotte Ray; Rebecca Lee Crumpler; Marian Anderson; Phillis Wheatley; Gwendolyn Brooks; Althea Gibson; Alice Coachman; Ruby Bridges; Vanessa Williams; Ursula Burns; Misty Copeland; Shirley Franklin; Loretta Lynch; Karine Jean-Pierre; Toni Morrison; Dorothy Dandridge; Diahann Carroll; Sadie Tanner Mossell Alexander; Maggie L. Walker|Maggie Walker; Wilma Rudolph; Gabby Douglas`},
+ l:`Madam C.J. Walker|Madam CJ Walker|Madame CJ Walker; Constance Baker Motley; Ketanji Brown Jackson; Condoleezza Rice; Oprah Winfrey|Oprah; Patricia Roberts Harris; Carol Moseley Braun; Barbara Jordan; Jane Bolin; Charlotte E. Ray|Charlotte Ray; Rebecca Lee Crumpler; Marian Anderson; Phillis Wheatley; Gwendolyn Brooks; Althea Gibson; Alice Coachman; Ruby Bridges; Vanessa Williams; Ursula Burns; Misty Copeland; Shirley Franklin; Loretta Lynch; Karine Jean-Pierre; Toni Morrison; Dorothy Dandridge; Diahann Carroll; Sadie Tanner Mossell Alexander; Maggie L. Walker|Maggie Walker; Wilma Rudolph; Gabby Douglas; Simone Manuel`},
  gem:`Mary Jane Patterson`},
 
 {id:'media-blaxploitation', q:"Name a 1970s Blaxploitation-era movie", like:"Shaft", t:{
@@ -1958,18 +1958,17 @@ const DATA = [
  r:`Psychic Killer; Chasing Secrets; Expecting Mary; Meant to Be; Me Again; If I Had Known I Was a Genius; Christmas Angel; Dear Secret Santa`},
  gem:`Della`},
 
-{id:'africa-pidgin', q:"Name a word or phrase from Nigerian Pidgin or slang", like:"how far", t:{
- b:`How far|how far na; Wahala; Abeg; Na wa|na wa o`,
- s:`Oya; Wetin dey happen|wetin dey`,
- l:`Chop; Gist; Comot; Sabi; Pikin; Ehen; Shey; Abi; Sharp sharp; You dey play|dey play; No wahala; Una; Oga; Dash; Gbege; Kpatakpata; Shakara; Yawa; Waka; Jare|joor; Sef; Gbam; How you dey; Make we go; E choke; Chop life; Na so; E be like say; Oga at the top`},
- gem:`Japa`},
+{id:'media-kidstv', q:"Name a kids' TV show with a Black lead or host", like:"Reading Rainbow", t:{
+ b:`Reading Rainbow; Doc McStuffins; The Proud Family|Proud Family; That's So Raven|Thats So Raven; Gullah Gullah Island`,
+ s:`Static Shock; Kenan & Kel|Kenan and Kel`,
+ l:`Cousin Skeeter; Romeo!|Romeo; Smart Guy; The Famous Jett Jackson|Famous Jett Jackson; Karma's World|Karmas World; Craig of the Creek; Ada Twist, Scientist|Ada Twist Scientist; Motown Magic; Bino and Fino; Super Sema; Iyanu; Moon Girl and Devil Dinosaur; Raven's Home|Ravens Home; True Jackson, VP|True Jackson VP; Just Jordan`},
+ gem:`The Jackson 5ive|Jackson 5ive|The Jackson Five cartoon`},
 
-{id:'chars-halfandhalf', q:"Name a character from Half & Half", like:"Mona Thorne", t:{
- b:`Mona Thorne|Mona; Dee Dee Thorne|Dee Dee; Phyllis Thorne|Phyllis; Big Dee Dee|Deirdre LaFontaine Thorne`,
- s:`Spencer|Andre Williams|Spencer Williams; Adam Benet|Adam`,
- l:`Kai Owens|Kai; Charles Thorne|Charles; Chauncey; Neil Crawford|Neil; Glen Stallworth|Glen; Ceci; Ray Willis|Ray; Brett Mahoney|Brett; Sophie; Drew Thorne|Drew; Camille`,
- r:`Tina; Chase; Lorenzo`},
- gem:`Naomi Dawson|Naomi`},
+{id:'life-crownroyal', q:"Name something kept in a Crown Royal bag", like:"dominoes", t:{
+ b:`Dominoes; Marbles; Coins|change|quarters; Jewelry; Hair ties|ponytail holders|hair bobbles`,
+ s:`Poker chips; Playing cards|cards`,
+ l:`Bobby pins; Barrettes; Game pieces; Jacks; Buttons; Batteries; Keys; Money|cash; Rubber bands; Sewing kit|sewing supplies; Crayons; Legos; Toy cars|Hot Wheels; Makeup; Hair rollers|rollers; Receipts; Dice`},
+ gem:`Bingo chips|bingo markers`},
 
 {id:'people-womendirectors', q:"Name a Black woman film or TV director", like:"Ava DuVernay", people:true, t:{
  b:`Ava DuVernay; Gina Prince-Bythewood; Kasi Lemmons; Regina King`,
@@ -1977,12 +1976,11 @@ const DATA = [
  l:`Dee Rees; Nia DaCosta; Euzhan Palcy; Stella Meghie; Tina Mabry; Cheryl Dunye; Darnell Martin; Victoria Mahoney; Neema Barnette; Kathleen Collins; Maya Angelou; Debbie Allen; Salli Richardson-Whitfield; Chinonye Chukwu; Radha Blank; Shola Lynch; Ayoka Chenzira; Leslie Harris; Millicent Shelton; Halle Berry; Channing Godfrey Peoples; A.V. Rockwell|AV Rockwell; Raven Jackson; Nikyatu Jusu; Michelle Parkerson; Madeline Anderson`},
  gem:`Eloyce Gist`},
 
-{id:'named-lloyd', q:"Name a famous Black person named Lloyd", like:"Lloyd Austin", people:true, t:{
- b:`Lloyd Austin; Lloyd Price; Lloyd Banks; Lloyd Polite|Lloyd (singer)`,
- s:`Lloyd McClendon; Lloyd Hall|Lloyd Augustus Hall`,
- l:`Lloyd Noel Ferguson|Lloyd Ferguson; Lloyd Quarterman; World B. Free|Lloyd Free; Lloyd Haynes; Lloyd Daniels|Swee'Pea; Lloyd Moseby; Lloyd Pierce; Tiny Grimes|Lloyd Grimes`,
- r:`Lloyd Neal; Lloyd Knibb; Lloyd Brevett; Lloyd Parks; Lloyd Charmers`},
- gem:`Lloyd Richards`},
+{id:'media-tvneighbors', q:"Name a famous neighbor from a Black sitcom (the character)", like:"Steve Urkel", t:{
+ b:`Steve Urkel|Urkel; Willona Woods|Willona; Mr. Bentley|Harry Bentley; Sheneneh Jenkins|Sheneneh`,
+ s:`Tom Willis; Pearl Shay`,
+ l:`Helen Willis; Sandra Clark; Rose Lee Holloway; Dave Rogers; Sally Rogers; Dave Johnson; Gemma Johnson; Tom DuBois; Sarah DuBois; Jazmine DuBois; Bruh-Man|Bruh Man; Uncle Ruckus; Calvin Butler; Tina Butler; Grover Johnson`},
+ gem:`Mr. Omar`},
 
 {id:'people-womenchefs', q:"Name a Black woman chef", like:"Leah Chase", people:true, t:{
  b:`Leah Chase; Carla Hall; Edna Lewis; Mashama Bailey`,
@@ -2546,11 +2544,12 @@ const DATA = [
  r:`Kenny Clarke; Kenny Dorham; Kenny Stills; Kenneth Faried; Ken Houston; Ken Riley; Kenneth Walker III`},
  gem:`Kenneth Clark|Kenneth B. Clark`},
 
-{id:'people-envjustice', q:"Name a Black environmental or environmental justice leader", like:"Robert Bullard", people:true, t:{
- b:`Robert Bullard; Majora Carter; Wangari Maathai; Van Jones`,
- s:`Peggy Shepard; Catherine Coleman Flowers`,
- l:`Dorceta Taylor; Mustafa Santiago Ali; Leah Thomas; Benjamin Chavis|Ben Chavis; Beverly Wright; Ayana Elizabeth Johnson; Elizabeth Yeampierre; Michael Regan; Jacqui Patterson; Vernice Miller-Travis; Heather McTeer Toney; John Francis; Carolyn Finney`},
- gem:`Hazel M. Johnson|Hazel Johnson`},
+{id:'gen-basement', q:"Name something you'd find in a Black family's basement", like:"a bar", t:{
+ b:`a bar|bar|mini bar|wet bar|the bar; deep freezer|freezer|chest freezer; washer and dryer|washing machine|washer|dryer|laundry; old couch|couch|sofa|old sofa`,
+ s:`pool table; Christmas decorations|holiday decorations|fake Christmas tree|Christmas tree`,
+ l:`extra fridge|second fridge|old fridge|refrigerator|fridge; big TV|old TV|TV|television; record player|records|vinyl|turntable|old records; weights|weight bench|treadmill|exercise bike|workout equipment; card table|folding table; folding chairs; tools|toolbox|workbench; storage boxes|boxes|totes; photo albums|old pictures|old photos; stereo|speakers|sound system|karaoke machine; ping pong table; futon|pull-out couch|sleeper sofa|air mattress; dehumidifier; wood paneling|paneling; paper towels|toilet paper|canned goods|bulk groceries; ironing board; space heater; trophies|old trophies`,
+ r:`jukebox; dartboard; water heater|hot water heater; furnace; drying rack|clothesline; beer sign|neon sign; bean bag|bean bag chair`},
+ gem:`old Jet and Ebony magazines|Jet magazines|Ebony magazines|old magazines|Jet|Ebony`},
 
 {id:'named-calvin', q:"Name a famous Black person named Calvin", like:"Calvin Johnson", people:true, t:{
  b:`Calvin Johnson|Megatron; Snoop Dogg|Calvin Broadus|Snoop; Calvin Murphy; Calvin Hill`,
@@ -2578,12 +2577,12 @@ const DATA = [
  l:`Greg Pruitt; Mike Pruitt; Earnest Byner; Kevin Mack; Hanford Dixon; Frank Minnifield; Eric Metcalf; Webster Slaughter; Bobby Mitchell; Jarvis Landry; Amari Cooper; Denzel Ward; Joe Haden; Josh Cribbs; Jamir Miller; Braylon Edwards; Jerome Harrison; Len Ford`},
  gem:`Bill Willis`},
 
-{id:'books-danticat', q:"Name a book by Edwidge Danticat", like:"Breath, Eyes, Memory", t:{
- b:`Breath, Eyes, Memory|Breath Eyes Memory; Krik? Krak!|Krik Krak; The Farming of Bones; The Dew Breaker`,
- s:`Brother, I'm Dying|Brother Im Dying; Claire of the Sea Light`,
- l:`Everything Inside; Untwine; Create Dangerously; Anacaona; The Art of Death; After the Dance; Mama's Nightingale|Mamas Nightingale; Eight Days; The Last Mapou`,
- r:`My Mommy Medicine; Haiti Noir; Haiti Noir 2; The Butterfly's Way`},
- gem:`Behind the Mountains`},
+{id:'gen-blacktitle', q:"Name a movie or show with 'Black' in the title", like:"Black Panther", t:{
+ b:`Black Panther; black-ish|blackish|black ish; BlacKkKlansman|Blackkklansman|Black Klansman; Black Dynamite`,
+ s:`Men in Black|MIB|Men in Black II|Men in Black 3; Black Lightning`,
+ l:`Black Panther: Wakanda Forever|Wakanda Forever|Black Panther Wakanda Forever; Black Is King; Black Nativity; Black Snake Moan; Black Knight; Black Adam; Black Jesus; Black Monday; A Black Lady Sketch Show|Black Lady Sketch Show; Black Love; Black Ink Crew; Black Caesar; Black Belt Jones; Black Mama, White Mama|Black Mama White Mama; Black or White; Black and Blue`,
+ r:`Black Orpheus; The Black Godfather|Black Godfather; Black Box; Black Gunn; Black Barbie`},
+ gem:`Black Girl|La Noire de`},
 
 {id:'stars-halleberry', q:"Name a movie or show starring Halle Berry", like:"Monster's Ball", t:{
  b:`Monster's Ball|Monsters Ball; X-Men|X Men; Catwoman; Boomerang; Swordfish`,
@@ -7406,11 +7405,11 @@ const DATA = [
  r:`(I Just Want It) To Be Over|To Be Over|I Just Want It to Be Over; Take Me Away; I Choose You; Next Time (Won't Give My Heart Away)|Next Time; Incapable; She`},
  gem:`Playa Cardz Right|Player Cards Right`},
 
-{id:'media-kidstv', q:"Name a kids' TV show with a Black lead or host", like:"Reading Rainbow", t:{
- b:`Reading Rainbow; Doc McStuffins; The Proud Family|Proud Family; That's So Raven|Thats So Raven; Gullah Gullah Island`,
- s:`Static Shock; Kenan & Kel|Kenan and Kel`,
- l:`Cousin Skeeter; Romeo!|Romeo; Smart Guy; The Famous Jett Jackson|Famous Jett Jackson; Karma's World|Karmas World; Craig of the Creek; Ada Twist, Scientist|Ada Twist Scientist; Motown Magic; Bino and Fino; Super Sema; Iyanu; Moon Girl and Devil Dinosaur; Raven's Home|Ravens Home; True Jackson, VP|True Jackson VP; Just Jordan`},
- gem:`The Jackson 5ive|Jackson 5ive|The Jackson Five cartoon`},
+{id:'africa-pidgin', q:"Name a word or phrase from Nigerian Pidgin or slang", like:"how far", t:{
+ b:`How far|how far na; Wahala; Abeg; Na wa|na wa o`,
+ s:`Oya; Wetin dey happen|wetin dey`,
+ l:`Chop; Gist; Comot; Sabi; Pikin; Ehen; Shey; Abi; Sharp sharp; You dey play|dey play; No wahala; Una; Oga; Dash; Gbege; Kpatakpata; Shakara; Yawa; Waka; Jare|joor; Sef; Gbam; How you dey; Make we go; E choke; Chop life; Na so; E be like say; Oga at the top`},
+ gem:`Japa`},
 
 {id:'rap-memphis', q:"Name a rapper from Memphis", like:"Three 6 Mafia", t:{
  b:`Three 6 Mafia|Three Six Mafia|Triple 6 Mafia|Three 6; Juicy J; Project Pat; 8Ball & MJG|8Ball and MJG|Eightball and MJG; Yo Gotti`,
@@ -7468,11 +7467,12 @@ const DATA = [
  r:`Johni Broome; Aundray Bruce; Tre Mason; Brent Fullwood; Lionel James; Dameyune Craig`},
  gem:`Harvey Glance`},
 
-{id:'life-crownroyal', q:"Name something kept in a Crown Royal bag", like:"dominoes", t:{
- b:`Dominoes; Marbles; Coins|change|quarters; Jewelry; Hair ties|ponytail holders|hair bobbles`,
- s:`Poker chips; Playing cards|cards`,
- l:`Bobby pins; Barrettes; Game pieces; Jacks; Buttons; Batteries; Keys; Money|cash; Rubber bands; Sewing kit|sewing supplies; Crayons; Legos; Toy cars|Hot Wheels; Makeup; Hair rollers|rollers; Receipts; Dice`},
- gem:`Bingo chips|bingo markers`},
+{id:'chars-halfandhalf', q:"Name a character from Half & Half", like:"Mona Thorne", t:{
+ b:`Mona Thorne|Mona; Dee Dee Thorne|Dee Dee; Phyllis Thorne|Phyllis; Big Dee Dee|Deirdre LaFontaine Thorne`,
+ s:`Spencer|Andre Williams|Spencer Williams; Adam Benet|Adam`,
+ l:`Kai Owens|Kai; Charles Thorne|Charles; Chauncey; Neil Crawford|Neil; Glen Stallworth|Glen; Ceci; Ray Willis|Ray; Brett Mahoney|Brett; Sophie; Drew Thorne|Drew; Camille`,
+ r:`Tina; Chase; Lorenzo`},
+ gem:`Naomi Dawson|Naomi`},
 
 {id:'sport-kings', q:"Name a Black Kings legend (Sacramento, Kansas City or Cincinnati Royals)", like:"Chris Webber", people:true, t:{
  b:`Chris Webber|C-Webb; Oscar Robertson|Big O; Mitch Richmond; De'Aaron Fox|DeAaron Fox; DeMarcus Cousins|Boogie`,
@@ -7533,11 +7533,12 @@ const DATA = [
  l:`Trick Daddy; Trina; Uncle Luke|Luther Campbell; Flo Rida; T-Pain; Plies; George McCrae; Bob Hayes; Emmitt Smith; Derrick Brooks; Dwight Gooden|Doc Gooden; Gary Sheffield; Fred McGriff; Tim Raines; Andre Dawson; Vince Carter; Tracy McGrady|T-Mac; Ray Lewis; Michael Irvin; Chad Johnson|Ochocinco; Frank Gore; Carrie Meek; Barry Jenkins; Tarell Alvin McCraney; Mase|Ma$e; Wesley Snipes; Derrick Henry; Nat Adderley`},
  gem:`Cannonball Adderley|Julian "Cannonball" Adderley`},
 
-{id:'media-tvneighbors', q:"Name a famous neighbor from a Black sitcom (the character)", like:"Steve Urkel", t:{
- b:`Steve Urkel|Urkel; Willona Woods|Willona; Mr. Bentley|Harry Bentley; Sheneneh Jenkins|Sheneneh`,
- s:`Tom Willis; Pearl Shay`,
- l:`Helen Willis; Sandra Clark; Rose Lee Holloway; Dave Rogers; Sally Rogers; Dave Johnson; Gemma Johnson; Tom DuBois; Sarah DuBois; Jazmine DuBois; Bruh-Man|Bruh Man; Uncle Ruckus; Calvin Butler; Tina Butler; Grover Johnson`},
- gem:`Mr. Omar`},
+{id:'named-lloyd', q:"Name a famous Black person named Lloyd", like:"Lloyd Austin", people:true, t:{
+ b:`Lloyd Austin; Lloyd Price; Lloyd Banks; Lloyd Polite|Lloyd (singer)`,
+ s:`Lloyd McClendon; Lloyd Hall|Lloyd Augustus Hall`,
+ l:`Lloyd Noel Ferguson|Lloyd Ferguson; Lloyd Quarterman; World B. Free|Lloyd Free; Lloyd Haynes; Lloyd Daniels|Swee'Pea; Lloyd Moseby; Lloyd Pierce; Tiny Grimes|Lloyd Grimes`,
+ r:`Lloyd Neal; Lloyd Knibb; Lloyd Brevett; Lloyd Parks; Lloyd Charmers`},
+ gem:`Lloyd Richards`},
 
 {id:'hist-hbcu1800s', q:"Name an HBCU founded in the 1800s", like:"Howard", t:{
  b:`Howard University|Howard; Hampton University|Hampton; Fisk University|Fisk; Morehouse College|Morehouse; Spelman College|Spelman`,
@@ -14385,11 +14386,12 @@ const DATA = [
  r:`Carnell Lake; Dermontti Dawson; Barry Foster; Tony Dungy; Mike Tomlin; Levon Kirkland`},
  gem:`Joe Gilliam`},
 
-{id:'hist-reconstruction', q:"Name a Black leader of the Reconstruction era", like:"Hiram Revels", people:true, t:{
- b:`Hiram Revels; Blanche K. Bruce|Blanche Bruce; Robert Smalls; Frederick Douglass`,
- s:`Joseph Rainey; P.B.S. Pinchback|Pinckney Pinchback|PBS Pinchback`,
- l:`John Mercer Langston; Robert Brown Elliott|Robert Elliott; John Roy Lynch; Jefferson Long; Josiah Walls; Benjamin Turner; Richard Cain; Robert De Large|Robert DeLarge; James Rapier; Jeremiah Haralson; John Adams Hyman|John Hyman; Francis Cardozo; Jonathan Jasper Wright; Tunis Campbell; Henry McNeal Turner; Martin Delany; Richard Greener; Alonzo Ransier; John Willis Menard; Mifflin Gibbs`},
- gem:`Oscar Dunn`},
+{id:'music-rocksongs', q:"Name a song by a Black artist with \"Rock\" in the title", like:"Rock with You", t:{
+ b:`Rock with You|Rock With You; Rock the Boat; Rock Steady; Rockin' Robin|Rockin Robin`,
+ s:`Rock Me Tonight (For Old Times Sake)|Rock Me Tonight; Rock Box`,
+ l:`Rockit; Rock Your Baby; Rock the Bells; Rock Creek Park; Rock Wit U (Awww Baby)|Rock Wit U; Rock Wit'cha|Rock Witcha; Rock and Roll Music|Rock n Roll Music; Rock Me Baby; Party Like a Rockstar|Party Like a Rock Star; Rock Star|Rockstar (N.E.R.D)|Rock Star NERD; Rock the Mic`,
+ r:`Rock Dis Funky Joint; Rock Island Line; Rockin' at Midnight|Rockin at Midnight`},
+ gem:`Good Rockin' Tonight|Good Rocking Tonight|Good Rockin Tonight`},
 
 {id:'hist-maya', q:"Name something tied to Maya Angelou's life", like:"I Know Why the Caged Bird Sings", t:{
  b:`I Know Why the Caged Bird Sings; Still I Rise; Phenomenal Woman; On the Pulse of Morning; Stamps, Arkansas|Stamps`,
@@ -14850,12 +14852,12 @@ const DATA = [
  l:`Mighty Sparrow; Lord Kitchener; Calypso Rose; Bunji Garlin; Destra Garcia|Destra; Hasely Crawford; Ato Boldon; Dwight Yorke; Eric Williams; Claudia Jones; Hazel Scott; Geoffrey Holder; Pearl Primus; C.L.R. James|CLR James; Earl Lovelace; Winifred Atwell`},
  gem:`Lord Shorty|Ras Shorty I|Garfield Blackman`},
 
-{id:'media-nbc', q:"Name an NBC show with a Black lead or star", like:"The Fresh Prince of Bel-Air", t:{
- b:`The Fresh Prince of Bel-Air|Fresh Prince|Fresh Prince of Bel Air; 227; Amen; Sanford and Son; A Different World|Different World`,
- s:`This Is Us; Diff'rent Strokes|Diffrent Strokes|Different Strokes`,
- l:`Gimme a Break!|Gimme a Break; Julia; The Flip Wilson Show|Flip Wilson Show; In the House; Kenan; Grand Crew; The Carmichael Show|Carmichael Show; Miami Vice; The A-Team|A-Team|A Team; Community; Homicide: Life on the Street|Homicide; St. Elsewhere|St Elsewhere; The Good Place|Good Place; Brooklyn Nine-Nine|Brooklyn 99|Brooklyn Nine Nine`,
- r:`The Richard Pryor Show|Richard Pryor Show; The Sammy Davis Jr. Show|Sammy Davis Jr Show; Out All Night; Sanford; Mr. Robinson|Mr Robinson; Hang Time; Friday Night Lights`},
- gem:`The Nat King Cole Show|Nat King Cole Show`},
+{id:'gen-lionel', q:"Name something tied to Lionel Richie (not a song)", like:"the Commodores", t:{
+ b:`the Commodores|Commodores; American Idol; We Are the World|USA for Africa`,
+ s:`Nicole Richie; Can't Slow Down|Cant Slow Down`,
+ l:`Sofia Richie; the Oscar for Say You, Say Me|Oscar|Academy Award; Grammy Awards|Grammys|Album of the Year; the 1984 Olympics closing ceremony|1984 Olympics|Olympics; Kennedy Center Honors; the Gershwin Prize|Library of Congress Gershwin Prize; Rock & Roll Hall of Fame|Rock and Roll Hall of Fame; Las Vegas residency|Vegas residency|Vegas; Motown; Glastonbury legends slot|Glastonbury; MusiCares Person of the Year|MusiCares; the King's coronation concert|coronation concert|King Charles coronation; Michael Jackson|co-writing with Michael Jackson; Quincy Jones`,
+ r:`the clay head from the Hello video|Hello video|clay bust|clay head; Lionel Richie (1982 album)|self-titled album`},
+ gem:`Tuskegee|Tuskegee University|Tuskegee Institute|Tuskegee, Alabama`},
 
 {id:'stars-tracymorgan', q:"Name a movie or show starring Tracy Morgan", like:"30 Rock", t:{
  b:`30 Rock|Thirty Rock; Saturday Night Live|SNL; The Last O.G.|Last OG`,
@@ -18926,7 +18928,54 @@ const DATA = [
  b:`Staying up late|staying up all night|up all night; Pizza; Scary movies|scary movie|horror movies; Snacks|junk food|candy; Pillow fight|pillow fights`,
  s:`Prank calls|prank calling|crank calls; Truth or dare`,
  l:`Popcorn; Sleeping bags|sleeping bag; Video games|PlayStation|Nintendo|Xbox; Braiding hair|doing hair|doing each other's hair; Painting nails|nail polish|doing nails; Gossip|gossiping|spilling tea; Three-way calling|three way call|three-way; Music videos|BET|106 & Park; Getting told to go to sleep|go to sleep|lights out; Hide and seek; Card games|Uno; Kool-Aid; Ramen noodles|noodles|Oodles of Noodles|Top Ramen; Bloody Mary; Makeovers; Talking about crushes|crushes; Movie marathon|movies; Dancing; Saturday morning cartoons|cartoons; Breakfast in the morning|pancakes|breakfast`},
- gem:`Making a pallet|pallet|pallet on the floor|make a pallet`}
+ gem:`Making a pallet|pallet|pallet on the floor|make a pallet`},
+
+{id:'music-questionsongs', q:"Name a song by a Black artist whose title is a question", like:"What's Going On", t:{
+ b:`What's Going On|Whats Going On; Where Is the Love?|Where Is the Love; What's Love Got to Do with It|Whats Love Got to Do With It; How Will I Know`,
+ s:`Can You Stand the Rain; Are You That Somebody?|Are You That Somebody`,
+ l:`Who Can I Run To; Is This Love; Why Do Fools Fall in Love; Where Did Our Love Go; Will You Still Love Me Tomorrow; Why Can't We Be Friends?|Why Cant We Be Friends; What's the 411?|Whats the 411; Didn't We Almost Have It All|Didnt We Almost Have It All; Where Do Broken Hearts Go; Will You Be There; Who's Zoomin' Who|Whos Zoomin Who; Do You Know Where You're Going To|Theme from Mahogany; How Do U Want It|How Do You Want It; Can We Talk; Who's Lovin' You|Whos Lovin You; Have You Ever?|Have You Ever; Can I Kick It?|Can I Kick It; Who Let the Dogs Out; What's Your Fantasy|Whats Your Fantasy; Who's That Lady|Whos That Lady; Who's Johnny|Whos Johnny`,
+ r:`Who Is He (And What Is He to You)?|Who Is He and What Is He to You|Who Is He; Is It a Crime; Do You Love What You Feel; Why Don't You Love Me|Why Dont You Love Me; Who Am I (What's My Name)?|Who Am I|What's My Name`},
+ gem:`Is It Because I'm Black|Is It Because Im Black`},
+
+{id:'hist-reconstruction', q:"Name a Black leader of the Reconstruction era", like:"Hiram Revels", people:true, t:{
+ b:`Hiram Revels; Blanche K. Bruce|Blanche Bruce; Robert Smalls; Frederick Douglass`,
+ s:`Joseph Rainey; P.B.S. Pinchback|Pinckney Pinchback|PBS Pinchback`,
+ l:`John Mercer Langston; Robert Brown Elliott|Robert Elliott; John Roy Lynch; Jefferson Long; Josiah Walls; Benjamin Turner; Richard Cain; Robert De Large|Robert DeLarge; James Rapier; Jeremiah Haralson; John Adams Hyman|John Hyman; Francis Cardozo; Jonathan Jasper Wright; Tunis Campbell; Henry McNeal Turner; Martin Delany; Richard Greener; Alonzo Ransier; John Willis Menard; Mifflin Gibbs`},
+ gem:`Oscar Dunn`},
+
+{id:'media-nbc', q:"Name an NBC show with a Black lead or star", like:"The Fresh Prince of Bel-Air", t:{
+ b:`The Fresh Prince of Bel-Air|Fresh Prince|Fresh Prince of Bel Air; 227; Amen; Sanford and Son; A Different World|Different World`,
+ s:`This Is Us; Diff'rent Strokes|Diffrent Strokes|Different Strokes`,
+ l:`Gimme a Break!|Gimme a Break; Julia; The Flip Wilson Show|Flip Wilson Show; In the House; Kenan; Grand Crew; The Carmichael Show|Carmichael Show; Miami Vice; The A-Team|A-Team|A Team; Community; Homicide: Life on the Street|Homicide; St. Elsewhere|St Elsewhere; The Good Place|Good Place; Brooklyn Nine-Nine|Brooklyn 99|Brooklyn Nine Nine`,
+ r:`The Richard Pryor Show|Richard Pryor Show; The Sammy Davis Jr. Show|Sammy Davis Jr Show; Out All Night; Sanford; Mr. Robinson|Mr Robinson; Hang Time; Friday Night Lights`},
+ gem:`The Nat King Cole Show|Nat King Cole Show`},
+
+{id:'media-sesamestreet', q:"Name a Black star or cast member who appeared on Sesame Street", like:"Stevie Wonder", people:true, t:{
+ b:`Stevie Wonder; Ray Charles; Michelle Obama; Usher`,
+ s:`Queen Latifah; Patti LaBelle`,
+ l:`Janelle Monáe|Janelle Monae; Destiny's Child|Destinys Child|Beyoncé|Beyonce|Kelly Rowland|Michelle Williams; B.B. King|BB King; SZA; Michael B. Jordan; Lena Horne; will.i.am|will i am|william i am; LL Cool J; the Fugees|Fugees|Lauryn Hill|Wyclef Jean; Jesse Jackson; Loretta Long|Susan; Roscoe Orman|Gordon`,
+ r:`Matt Robinson; Alaina Reed|Alaina Reed Hall|Olivia; Miles Orman|Miles`},
+ gem:`James Earl Jones`},
+
+{id:'people-d9members', q:"Name a famous member of a Divine Nine fraternity or sorority", like:"Martin Luther King Jr.", people:true, t:{
+ b:`Martin Luther King Jr.|MLK|Martin Luther King; Kamala Harris; Michael Jordan; Steve Harvey`,
+ s:`Shaquille O'Neal|Shaq; Toni Morrison`,
+ l:`Thurgood Marshall; W.E.B. Du Bois|WEB Du Bois|Du Bois; Jesse Owens; Paul Robeson; Lionel Richie; Stuart Scott; Maya Angelou; Coretta Scott King; Jesse Jackson; Langston Hughes; Cedric the Entertainer; Colin Kaepernick; Jerry Rice; John Lewis; Emmitt Smith; Al Roker; Shirley Chisholm; Wilma Rudolph; Roberta Flack; Natalie Cole; Dorothy Height; Keshia Knight Pulliam; Kim Coles`},
+ gem:`Zora Neale Hurston`},
+
+{id:'music-sweetsongs', q:"Name a song by a Black artist with \"Sweet\" or \"Sweetest\" in the title", like:"Sweet Love", t:{
+ b:`Sweet Love; Sweet Thing; How Sweet It Is (To Be Loved by You)|How Sweet It Is; The Sweetest Taboo|Sweetest Taboo`,
+ s:`Sweet Lady; Sweet Dreams`,
+ l:`Sweet Sticky Thing; Sweet Soul Music; Sweet Home Chicago; Sweet Little Sixteen; Sweet Sixteen; Sweet Life; Sweetest Girl (Dollar Bill)|Sweetest Girl; The Sweetest Thing|Sweetest Thing; Sweet Inspiration; Sweet Lorraine; Sweet Baby`,
+ r:`Sweet Sweet Baby (Since You've Been Gone)|Sweet Sweet Baby; Sweetheart`},
+ gem:`Sweet Georgia Brown`},
+
+{id:'hist-iconhomes', q:"Name a Black icon whose home is now a museum or historic site", like:"Martin Luther King Jr.", people:true, t:{
+ b:`Martin Luther King Jr.|MLK|Martin Luther King; Frederick Douglass; Prince; Bob Marley`,
+ s:`Harriet Tubman; Nelson Mandela|Mandela`,
+ l:`Louis Armstrong; Booker T. Washington; George Washington Carver; Mary McLeod Bethune; Carter G. Woodson; Maggie L. Walker|Maggie Walker; Medgar Evers; Nina Simone; W.C. Handy|WC Handy; Paul Laurence Dunbar; Scott Joplin; Berry Gordy; Alex Haley; Paul Robeson; August Wilson; John Coltrane; Ma Rainey; Josephine Baker`,
+ r:`Pauli Murray; Robert Smalls`},
+ gem:`Charles Young`}
 ];
 
 </script>
