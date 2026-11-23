@@ -2202,12 +2202,12 @@ const DATA = [
  l:`Lois Mailou Jones; Betye Saar; Alison Saar; Lorna Simpson; Carrie Mae Weems; Mickalene Thomas; Simone Leigh; Julie Mehretu; Njideka Akunyili Crosby; Howardena Pindell; Emma Amos; Laura Wheeler Waring; Meta Vaux Warrick Fuller|Meta Warrick Fuller; Selma Burke; Clementine Hunter; Harriet Powers; Bisa Butler; Toyin Ojih Odutola; Wangechi Mutu; Tschabalala Self; Jordan Casteel; Deana Lawson; Barbara Chase-Riboud; Margaret Burroughs; Ming Smith; Lynette Yiadom-Boakye; Sonia Boyce; Chakaia Booker; Joyce Scott`},
  gem:`May Howard Jackson`},
 
-{id:'books-draper', q:"Name a book by Sharon M. Draper", like:"Out of My Mind", t:{
- b:`Out of My Mind; Tears of a Tiger; Forged by Fire; Copper Sun`,
- s:`Stella by Starlight; Blended`,
- l:`Darkness Before Dawn; Out of My Heart; Fire from the Rock; Double Dutch; Romiette and Julio; The Battle of Jericho; November Blues; Just Another Hero; Panic; We Beat the Street`,
- r:`Little Sister Is Not My Name; Lost in the Tunnel of Time; Shadows of Caesar's Creek`},
- gem:`Ziggy and the Black Dinosaurs`},
+{id:'named-rick', q:"Name a famous Black person named Rick, Ricky or Rickey", like:"Rick James", people:true, t:{
+ b:`Rick James; Rick Ross|Ricky Rozay; Rickey Henderson; Rickey Smiley`,
+ s:`Ricky Bell; Slick Rick`,
+ l:`Ricky Williams; Rick Fox; Rick Mahorn; Ricky Davis; Ricky Pierce; Rickey Jackson; Ricky Watters; Ricky Sanders; Rick Upchurch; Ricky Harris`,
+ r:`Ricky Ervins; Rick Brunson; Ricky Seals-Jones; Rickey Dixon; Rickey Young`},
+ gem:`Rickey Minor`},
 
 {id:'carib-dominicanfood', q:"Name a Dominican dish", like:"mangú", t:{
  b:`Mangú|mangu; Sancocho; La bandera|la bandera dominicana; Tostones; Chicharrón|chicharron`,
@@ -2788,12 +2788,12 @@ const DATA = [
  l:`Easter play|Easter pageant|Easter program; New shoes; Easter lilies|lilies; Deviled eggs; Chocolate bunny; Peeps; Jelly beans; Church hats; Family dinner; Easter pictures|photos in your Easter clothes; Easter bonnet|bonnet; Plastic eggs; Sweet potato pie; Mac and cheese|macaroni and cheese; Potato salad; Visiting relatives|going to Grandma's`},
  gem:`Bun and cheese|Easter bun and cheese|bun & cheese`},
 
-{id:'books-emecheta', q:"Name a book by Buchi Emecheta", like:"The Joys of Motherhood", t:{
- b:`The Joys of Motherhood; Second-Class Citizen|Second Class Citizen; In the Ditch; The Bride Price`,
- s:`The Slave Girl; Destination Biafra`,
- l:`Head Above Water; Kehinde; Double Yoke; Gwendolen; The Rape of Shavi; The New Tribe; Naira Power; Nowhere to Play; The Moonlight Bride; Adah's Story|Adahs Story`,
- r:`The Wrestling Match; A Kind of Marriage; Our Own Freedom`},
- gem:`Titch the Cat`},
+{id:'gen-initials', q:"Name a famous Black person who goes by initials (not an athlete)", like:"B.B. King", people:true, t:{
+ b:`B.B. King|BB King; W.E.B. Du Bois|WEB Du Bois|W.E.B. DuBois|WEB DuBois; T.D. Jakes|TD Jakes; D.L. Hughley|DL Hughley; J. Cole|J Cole`,
+ s:`T.I.|TI; L.A. Reid|LA Reid`,
+ l:`W.C. Handy|WC Handy; A. Philip Randolph|A Philip Randolph; C.L. Franklin|CL Franklin; J.B. Smoove|JB Smoove; T.C. Carson|TC Carson; T.K. Carter|TK Carter; R.L. Burnside|RL Burnside; E. Lynn Harris|E Lynn Harris; K. Michelle|K Michelle; J. Holiday|J Holiday; B.J. the Chicago Kid|BJ the Chicago Kid; CCH Pounder|C.C.H. Pounder; S. Epatha Merkerson|S Epatha Merkerson; J Dilla|J. Dilla; A.J. Johnson|AJ Johnson`,
+ r:`J. Prince|J Prince; J. Alexander|J Alexander; T.J. Holmes|TJ Holmes; R.J. Cyler|RJ Cyler; Q. Parker|Q Parker; C. Delores Tucker|C Delores Tucker; B. Smith|B Smith; A.J. Calloway|AJ Calloway; J. August Richards|J August Richards`},
+ gem:`T. Thomas Fortune|T Thomas Fortune`},
 
 {id:'life-stores', q:"Name a clothing or sneaker store popular in Black neighborhoods", like:"Foot Locker", t:{
  b:`Foot Locker; Rainbow|Rainbow Shops; Citi Trends; DTLR|Downtown Locker Room; Finish Line`,
@@ -19157,7 +19157,55 @@ const DATA = [
  s:`A card|Father's Day card|card; Cooking Daddy's favorite meal|his favorite meal|favorite meal`,
  l:`Wallet; Grill tools|grill set|spatula and tongs; Breakfast in bed; Golf|golf balls|tee time; Fishing trip|fishing; Watching the game|watching the game on TV|ball game; A nap|letting Daddy nap|nap; Steak dinner|steak; Slippers; Tool set|tools; Watch; Shaving kit|razor; Bathrobe|robe; Father's Day sermon|sermon; Taking Daddy out to eat|dinner out|restaurant; Calling your dad|phone call`,
  r:`Family photos|family picture; Recliner; A day off from chores|no chores`},
- gem:`Red rose for a living father, white rose in memory|wearing a rose|rose|red or white rose`}
+ gem:`Red rose for a living father, white rose in memory|wearing a rose|rose|red or white rose`},
+
+{id:'places-memphis', q:"Name a place, person or thing Memphis is famous for in Black culture", like:"Beale Street", t:{
+ b:`Beale Street; Stax Records|Stax|Stax Museum|Stax Museum of American Soul Music; Lorraine Motel|National Civil Rights Museum; Memphis barbecue|barbecue|BBQ|dry rub ribs|ribs; Memphis Grizzlies|Grizzlies`,
+ s:`Three 6 Mafia|Three Six Mafia; Isaac Hayes`,
+ l:`Mason Temple; Church of God in Christ|COGIC; Sanitation workers' strike|1968 sanitation strike|sanitation strike|I Am a Man; Clayborn Temple; WDIA; Royal Studios; Hi Records; Al Green; Full Gospel Tabernacle|Al Green's church; Gus's Fried Chicken|Gus's|Guss Fried Chicken; B.B. King|BB King; W.C. Handy|WC Handy; Ida B. Wells|Free Speech|Memphis Free Speech; Penny Hardaway; Memphis Tigers; Southern Heritage Classic; Memphis jookin|jookin; Aretha Franklin|Aretha; 8Ball & MJG|8Ball and MJG; Project Pat; Juicy J; Yo Gotti; Booker T. & the M.G.'s|Booker T and the MGs; Rufus Thomas; Carla Thomas`,
+ r:`Orange Mound; LeMoyne-Owen College|LeMoyne-Owen; Withers Collection|Ernest Withers; B.B. King's Blues Club|BB Kings Blues Club; W.C. Handy Park|Handy Park`},
+ gem:`Tom Lee Park|Tom Lee`},
+
+{id:'sport-hoyas', q:"Name a Black Georgetown Hoyas basketball star", like:"Patrick Ewing", people:true, t:{
+ b:`Patrick Ewing; Allen Iverson; Alonzo Mourning; Dikembe Mutombo`,
+ s:`Roy Hibbert; Otto Porter Jr.|Otto Porter`,
+ l:`Reggie Williams; Jeff Green; Greg Monroe; Michael Graham; David Wingate; Othella Harrington; Jerome Williams|Junkyard Dog; Victor Page; Mike Sweetney; Jahidi White; Austin Freeman; Chris Wright; DaJuan Summers; Henry Sims; Hollis Thompson; Markel Starks; D'Vauntes Smith-Rivera|DVauntes Smith-Rivera; Josh Smith; Jessie Govan`,
+ r:`Fred Brown; Craig Shelton; Michael Jackson; Kevin Braswell; Brandon Bowman; Jonathan Wallace`},
+ gem:`Eric "Sleepy" Floyd|Sleepy Floyd|Eric Floyd`},
+
+{id:'stars-janetjackson', q:"Name a movie or show starring Janet Jackson", like:"Poetic Justice", t:{
+ b:`Poetic Justice; Good Times; Why Did I Get Married?|Why Did I Get Married; Nutty Professor II: The Klumps|Nutty Professor II|The Klumps`,
+ s:`Diff'rent Strokes|Diffrent Strokes|Different Strokes; Why Did I Get Married Too?|Why Did I Get Married Too`,
+ l:`For Colored Girls; Fame; The Jacksons|The Jacksons variety show; JANET|Janet documentary|Janet Jackson documentary`,
+ r:`The Love Boat|Love Boat`},
+ gem:`A New Kind of Family`},
+
+{id:'carib-haitiandescent', q:"Name a famous person of Haitian descent born outside Haiti", like:"Jason Derulo", people:true, t:{
+ b:`Jason Derulo; Naomi Osaka; Jean-Michel Basquiat|Basquiat`,
+ s:`Pras|Pras Michel|Prakazrel Michel; Kodak Black`,
+ l:`Karine Jean-Pierre; Mia Love; Jason Pierre-Paul|JPP; Pierre Garçon|Pierre Garcon; Jonathan Vilma; Kwame Raoul; Mari Osaka`},
+ gem:`Alexandre Dumas|Alexandre Dumas pere|Dumas`},
+
+{id:'gen-seafood', q:"Name a soul food dish made with fish or seafood", like:"Fried catfish", t:{
+ b:`Fried catfish|catfish; Fried whiting|whiting; Shrimp and grits|shrimp & grits; Salmon croquettes|salmon patties|salmon cakes; Gumbo|seafood gumbo`,
+ s:`Fish and grits|fish & grits; Crab cakes`,
+ l:`Fried shrimp; Fried oysters; Fish sandwich|fried fish sandwich; Shrimp po'boy|po'boy|po boy|oyster po'boy; Crab legs; Seafood boil|Lowcountry boil|Frogmore stew; Crawfish étouffée|crawfish etouffee|etouffee; Shrimp creole; Jambalaya; Deviled crab; Smothered catfish; Fried croaker|croaker; Porgies|fried porgies; Fried perch|perch; Buffalo fish; Red snapper|fried snapper; Fried tilapia|tilapia; Mackerel patties|mackerel cakes; She-crab soup; Oyster stew; Fried flounder|flounder`,
+ r:`Butterfish; Catfish stew; Conch fritters; Shrimp perloo|perloo`},
+ gem:`Crab rice|Gullah crab rice|fried crab rice`},
+
+{id:'hist-1988', q:"Name something that happened in Black history in 1988", like:"Coming to America", t:{
+ b:`Coming to America; Doug Williams wins the Super Bowl|Doug Williams|Super Bowl XXII; Jesse Jackson runs for president|Jesse Jackson; Flo-Jo's world records|Florence Griffith Joyner|Flo-Jo|FloJo`,
+ s:`Toni Morrison wins the Pulitzer|Beloved wins the Pulitzer|Toni Morrison|Beloved; Yo! MTV Raps premieres|Yo! MTV Raps|Yo MTV Raps`,
+ l:`School Daze; I'm Gonna Git You Sucka|Im Gonna Git You Sucka; Jackie Joyner-Kersee wins Olympic gold|Jackie Joyner-Kersee; Carl Lewis wins Olympic gold|Carl Lewis; Fast Car|Tracy Chapman; Don't Worry, Be Happy|Dont Worry Be Happy|Bobby McFerrin; It Takes a Nation of Millions to Hold Us Back|It Takes a Nation of Millions|Public Enemy; It Takes Two|Rob Base and DJ E-Z Rock; Parents Just Don't Understand|Parents Just Dont Understand; Don't Be Cruel|Bobby Brown's Don't Be Cruel; Long Live the Kane; The Great Adventures of Slick Rick; Willie Stargell enters the Hall of Fame|Willie Stargell; Oprah takes ownership of her show|Harpo Studios`,
+ r:`Barbara Harris elected first woman Episcopal bishop|Barbara Harris; Eugene Marino becomes the first Black Catholic archbishop|Eugene Marino; The Source magazine founded|The Source; Just Got Paid|Johnny Kemp`},
+ gem:`Debi Thomas wins Olympic bronze|Debi Thomas`},
+
+{id:'song-jaggededge', q:"Name a Jagged Edge song", like:"Let's Get Married", t:{
+ b:`Let's Get Married|Lets Get Married; Where the Party At; Promise; He Can't Love U|He Cant Love U|He Can't Love You`,
+ s:`Gotta Be|I Gotta Be; Walked Outta Heaven`,
+ l:`Goodbye; Good Luck Charm; Put a Little Umph in It; What's It Like|Whats It Like`,
+ r:`Cut Somethin'|Cut Somethin|Cut Something; Can We Be Tight; I Got It`},
+ gem:`The Way That You Talk`}
 ];
 
 </script>
